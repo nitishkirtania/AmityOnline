@@ -49,7 +49,7 @@ public class MBAProgram extends HeaderBaseClass{
 		driver.manage().window().maximize();
 		driver.navigate().to("https://amityonline.com/master-of-business-administration-online");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
-		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		hPom=new HeaderPOM(driver);
 		Apom=new ApplyNowPOM(driver);
 		random=new RandomDetails(driver);
@@ -2203,26 +2203,286 @@ public class MBAProgram extends HeaderBaseClass{
 			driver.navigate().back();
 
 			// Click 'SHOW MORE BUTTON-6'
-	        WebElement showMoreBtn6 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+			WebElement showMoreBtn6 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn6);
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn6);
 			test.log(Status.PASS, "'SHOW MORE' clicked via JS.");
-	        // Click 'Master of Business Administration'
-	        WebElement mba = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Master of Business Administration']")));
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", mba);
-			((JavascriptExecutor) driver).executeScript("arguments[0].click();", mba);
+			Thread.sleep(3000);
+			// Wait and click 'Master of Business Administration'
+			WebElement master_ba = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Master of Business Administration']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", master_ba);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", master_ba);
 			wait.until(ExpectedConditions.urlContains("master-of-business-administration-online"));
 			String mba_URL = driver.getCurrentUrl();
 			System.out.println("Navigated URL: " + mba_URL);
 			Assert.assertTrue(mba_URL.contains("master-of-business-administration-online"), "URL mismatch after clicking Master of Business Administration");
-			test.log(Status.PASS, "Navigated to Master of Business Administration page: " + mba_URL);
+			test.log(Status.PASS, "Navigated to MBA page: " + mba_URL);
+
+			// Go back to previous page
+			// driver.navigate().back();
+
+			// Click 'SHOW MORE BUTTON-7'
+	        WebElement showMoreBtn7 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn7);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn7);
+			test.log(Status.PASS, "'SHOW MORE' clicked via JS.");
+	        // Click 'MBA with specialization in Digital Marketing Management'
+	        WebElement mba_DigitalMarketing = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'MBA with specialization in Digital Marketing Manag')]")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", mba_DigitalMarketing);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", mba_DigitalMarketing);
+			wait.until(ExpectedConditions.urlContains("mba-digital-marketing-management-online"));
+			String mba_DigitalMarketing_URL = driver.getCurrentUrl();
+			System.out.println("Navigated URL: " + mba_DigitalMarketing_URL);
+			Assert.assertTrue(mba_DigitalMarketing_URL.contains("mba-digital-marketing-management-online"), "URL mismatch after clicking MBA with specialization in Digital Marketing Management");
+			test.log(Status.PASS, "Navigated to MBA with specialization in Digital Marketing Management page: " + mba_DigitalMarketing_URL);
 
 			// Go back to previous page
 			driver.navigate().back();
 
-			
+			// Click 'SHOW MORE BUTTON-8'
+	        WebElement showMoreBtn8 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn8);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn8);
+			test.log(Status.PASS, "'SHOW MORE' clicked via JS.");
+	        // Click 'MBA with specialization in HR Analytics'
+	        WebElement mba_HRAnalytics = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='MBA with specialization in HR Analytics']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", mba_HRAnalytics);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", mba_HRAnalytics);
+			wait.until(ExpectedConditions.urlContains("mba-human-resources-hr-analytics-online"));
+			String mba_HRAnalytics_URL = driver.getCurrentUrl();
+			System.out.println("Navigated URL: " + mba_HRAnalytics_URL);
+			Assert.assertTrue(mba_HRAnalytics_URL.contains("mba-human-resources-hr-analytics-online"), "URL mismatch after clicking MBA with specialization in HR Analytics");
+			test.log(Status.PASS, "Navigated to MBA with specialization in HR Analytics page: " + mba_HRAnalytics_URL);
 
+			// Go back to previous page
+			driver.navigate().back();
 
+			// Click 'SHOW MORE BUTTON-9'
+	        WebElement showMoreBtn9 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn9);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn9);
+			test.log(Status.PASS, "'SHOW MORE' clicked via JS.");
+	        // Click 'MBA with specialization in Data Science'
+	        WebElement mba_DS = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='MBA with specialization in Data Science']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", mba_DS);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", mba_DS);
+			wait.until(ExpectedConditions.urlContains("mba-data-science-online"));
+			String mba_DS_URL = driver.getCurrentUrl();
+			System.out.println("Navigated URL: " + mba_DS_URL);
+			Assert.assertTrue(mba_DS_URL.contains("mba-data-science-online"), "URL mismatch after clicking MBA with specialization in Data Science");
+			test.log(Status.PASS, "Navigated to MBA with specialization in Data Science page: " + mba_DS_URL);
+
+			// Go back to previous page
+			driver.navigate().back();
+
+			// Click 'SHOW MORE BUTTON-10'
+	        WebElement showMoreBtn10 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn10);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn10);
+			test.log(Status.PASS, "'SHOW MORE' clicked via JS.");
+	        // Click 'MBA with specialization in Business Analytics'
+	        WebElement mba_BusinessAnalytics = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='MBA with specialization in Business Analytics']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", mba_BusinessAnalytics);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", mba_BusinessAnalytics);
+			wait.until(ExpectedConditions.urlContains("mba-business-analytics-online"));
+			String mba_BusinessAnalytics_URL = driver.getCurrentUrl();
+			System.out.println("Navigated URL: " + mba_BusinessAnalytics_URL);
+			Assert.assertTrue(mba_BusinessAnalytics_URL.contains("mba-business-analytics-online"), "URL mismatch after clicking MBA with specialization in Business Analytics");
+			test.log(Status.PASS, "Navigated to MBA with specialization in Business Analytics page: " + mba_BusinessAnalytics_URL);
+
+			// Go back to previous page
+			driver.navigate().back();
+
+			// Click 'SHOW MORE BUTTON-11'
+	        WebElement showMoreBtn11 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn11);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn11);
+			test.log(Status.PASS, "'SHOW MORE' clicked via JS.");
+	        // Click 'MBA with specialization in Digital Entrepreneurship'
+	        WebElement mba_DigitalEntre = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'MBA with specialization in Digital Entrepreneurshi')]")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", mba_DigitalEntre);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", mba_DigitalEntre);
+			wait.until(ExpectedConditions.urlContains("mba-digital-entrepreneurship-online"));
+			String mba_DigitalEntre_URL = driver.getCurrentUrl();
+			System.out.println("Navigated URL: " + mba_DigitalEntre_URL);
+			Assert.assertTrue(mba_DigitalEntre_URL.contains("mba-digital-entrepreneurship-online"), "URL mismatch after clicking MBA with specialization in Digital Entrepreneurship");
+			test.log(Status.PASS, "Navigated to MBA with specialization in Digital Entrepreneurship page: " + mba_DigitalEntre_URL);
+
+			// Go back to previous page
+			driver.navigate().back();
+
+			// Click 'SHOW MORE BUTTON-12'
+	        WebElement showMoreBtn12 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn12);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn12);
+			test.log(Status.PASS, "'SHOW MORE' clicked via JS.");
+	        // Click 'Master of Arts (Journalism and Mass communication)'
+	        WebElement MA_Jour_Mass_Comm = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Master of Arts (Journalism and Mass communication)']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", MA_Jour_Mass_Comm);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", MA_Jour_Mass_Comm);
+			wait.until(ExpectedConditions.urlContains("master-of-arts-journalism-and-mass-communication-online"));
+			String MA_Jour_Mass_Comm_URL = driver.getCurrentUrl();
+			System.out.println("Navigated URL: " + MA_Jour_Mass_Comm_URL);
+			Assert.assertTrue(MA_Jour_Mass_Comm_URL.contains("master-of-arts-journalism-and-mass-communication-online"), "URL mismatch after clicking Master of Arts (Journalism and Mass communication)");
+			test.log(Status.PASS, "Navigated to Master of Arts (Journalism and Mass communication) page: " + MA_Jour_Mass_Comm_URL);
+
+			// Go back to previous page
+			driver.navigate().back();
+
+			// Click 'SHOW MORE BUTTON-13'
+	        WebElement showMoreBtn13 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn13);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn13);
+			test.log(Status.PASS, "'SHOW MORE' clicked via JS.");
+	        // Click 'M.Com with specialization in Fintech)'
+	        WebElement M_Com_Fintech = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='M.Com with specialization in Fintech']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", M_Com_Fintech);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", M_Com_Fintech);
+			wait.until(ExpectedConditions.urlContains("mcom-fintech-online"));
+			String M_Com_Fintech_URL = driver.getCurrentUrl();
+			System.out.println("Navigated URL: " + M_Com_Fintech_URL);
+			Assert.assertTrue(M_Com_Fintech_URL.contains("mcom-fintech-online"), "URL mismatch after clicking M.Com with specialization in Fintech)");
+			test.log(Status.PASS, "Navigated to M.Com with specialization in Fintech) page: " + M_Com_Fintech_URL);
+
+			// Go back to previous page
+			driver.navigate().back();
+
+			// Click 'SHOW MORE BUTTON-14'
+	        WebElement showMoreBtn14 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn14);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn14);
+			test.log(Status.PASS, "'SHOW MORE' clicked via JS.");
+	        // Click 'M.Com with specialization in Financial Management)'
+	        WebElement M_Com_Financial_Management = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='M.Com with specialization in Financial Management']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", M_Com_Financial_Management);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", M_Com_Financial_Management);
+			wait.until(ExpectedConditions.urlContains("master-of-commerce-financial-management-online"));
+			String M_Com_Financial_Management_URL = driver.getCurrentUrl();
+			System.out.println("Navigated URL: " + M_Com_Financial_Management_URL);
+			Assert.assertTrue(M_Com_Financial_Management_URL.contains("master-of-commerce-financial-management-online"), "URL mismatch after clicking M.Com with specialization in Financial Management)");
+			test.log(Status.PASS, "Navigated to M.Com with specialization in Financial Management) page: " + M_Com_Financial_Management_URL);
+
+			// Go back to previous page
+			driver.navigate().back();
+
+			// Click 'SHOW MORE BUTTON-15'
+	        WebElement showMoreBtn15 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn15);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn15);
+			test.log(Status.PASS, "'SHOW MORE' clicked via JS.");
+	        // Click 'Master of Arts in Public Policy & Governance'
+	        WebElement MA_Arts_PPG = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Master of Arts in Public Policy & Governance']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", MA_Arts_PPG);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", MA_Arts_PPG);
+			wait.until(ExpectedConditions.urlContains("ma-public-policy"));
+			String MA_Arts_PPG_URL = driver.getCurrentUrl();
+			System.out.println("Navigated URL: " + MA_Arts_PPG_URL);
+			Assert.assertTrue(MA_Arts_PPG_URL.contains("ma-public-policy"), "URL mismatch after clicking Master of Arts in Public Policy & Governance)");
+			test.log(Status.PASS, "Navigated to Master of Arts in Public Policy & Governance page: " + MA_Arts_PPG_URL);
+
+			// Go back to previous page
+			driver.navigate().back();
+
+			// Click 'SHOW MORE BUTTON-16'
+	        WebElement showMoreBtn16 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn16);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn16);
+			test.log(Status.PASS, "'SHOW MORE' clicked via JS.");
+	        // Click 'Master of Arts in Psychology'
+	        WebElement Master_Arts_Psychology = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Master of Arts in Psychology']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", Master_Arts_Psychology);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Master_Arts_Psychology);
+			wait.until(ExpectedConditions.urlContains("ma-in-psychology"));
+			String Master_Arts_Psychology_URL = driver.getCurrentUrl();
+			System.out.println("Navigated URL: " + Master_Arts_Psychology_URL);
+			Assert.assertTrue(Master_Arts_Psychology_URL.contains("ma-in-psychology"), "URL mismatch after clicking Master of Arts in Psychology)");
+			test.log(Status.PASS, "Navigated to Master of Arts in Psychology page: " + Master_Arts_Psychology_URL);
+
+			// Go back to previous page
+			driver.navigate().back();
+
+			// Click 'SHOW MORE BUTTON-17'
+	        WebElement showMoreBtn17 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn17);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn17);
+			test.log(Status.PASS, "'SHOW MORE' clicked via JS.");
+	        // Click 'Master of Science in Data Science'
+	        WebElement Master_inDataScience = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Master of Science in Data Science']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", Master_inDataScience);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", Master_inDataScience);
+			wait.until(ExpectedConditions.urlContains("msc-in-data-science"));
+			String Master_inDataScience_URL = driver.getCurrentUrl();
+			System.out.println("Navigated URL: " + Master_inDataScience_URL);
+			Assert.assertTrue(Master_inDataScience_URL.contains("msc-in-data-science"), "URL mismatch after clicking Master of Science in Data Science)");
+			test.log(Status.PASS, "Navigated to Master of Science in Data Science page: " + Master_inDataScience_URL);
+
+			// Go back to previous page
+			driver.navigate().back();
+
+			// Click 'SHOW MORE BUTTON-18'
+	        WebElement showMoreBtn18 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn18);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn18);
+			test.log(Status.PASS, "'SHOW MORE' clicked via JS.");
+	        // Click 'MBA With Dual Specialization'
+	        WebElement MBA_Dual_Specialication = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='MBA With Dual Specialization']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", MBA_Dual_Specialication);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", MBA_Dual_Specialication);
+			wait.until(ExpectedConditions.urlContains("mba-dual-specialization"));
+			String MBA_Dual_Specialication_URL = driver.getCurrentUrl();
+			System.out.println("Navigated URL: " + MBA_Dual_Specialication_URL);
+			Assert.assertTrue(MBA_Dual_Specialication_URL.contains("mba-dual-specialization"), "URL mismatch after clicking MBA With Dual Specialization)");
+			test.log(Status.PASS, "Navigated to MBA With Dual Specialization page: " + MBA_Dual_Specialication_URL);
+
+			// Go back to previous page
+			driver.navigate().back();
+
+			// Click 'SHOW MORE BUTTON-18'
+	        WebElement showMoreBtn19 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn19);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn19);
+			test.log(Status.PASS, "'SHOW MORE' clicked via JS.");
+	        // Click 'Master of Business Administration in General Management'
+	        WebElement MBA_General_Management = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Master of Business Administration in General Manag')]")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", MBA_General_Management);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", MBA_General_Management);
+			wait.until(ExpectedConditions.urlContains("mba-general-management"));
+			String MBA_General_Management_URL = driver.getCurrentUrl();
+			System.out.println("Navigated URL: " + MBA_General_Management_URL);
+			Assert.assertTrue(MBA_General_Management_URL.contains("mba-general-management"), "URL mismatch after clicking Master of Business Administration in General Management)");
+			test.log(Status.PASS, "Navigated to Master of Business Administration in General Management page: " + MBA_General_Management_URL);
+
+			// Go back to previous page
+			driver.navigate().back();
+
+		    // Click to 'SHOW MORE BUTTON'
+	        WebElement showMoreBtn20 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+	        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn20);
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn20);
+	        test.log(Status.PASS, "'SHOW MORE' button clicked (16th time, scroll).");
+
+			// Wait until the PG Program heading is visible
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ul[3]")));
+			System.out.println("✅ 'PG Program' section found.");
+
+			// Collect all course links under PG Program
+			List<WebElement> courseElements = driver.findElements(By.xpath(" //footer[@class='container mb-8 footer_root__az0w0']//ul[3]//li"));
+			System.out.println("✅ Found " + courseElements.size() + " course(s).");
+
+			// Print out course names
+			for (int i = 0; i < courseElements.size(); i++) {
+				String courseName = courseElements.get(i).getText();
+				System.out.println("  ▶ Course " + (i + 1) + ": " + courseName);
+			}
+
+			// Verify the count matches expectation
+			int expectedCount = 19;
+			int actualCount = courseElements.size() - 1;
+
+			Assert.assertEquals(actualCount, expectedCount,
+					"❌ Mismatch in course count. Expected: " + expectedCount + ", Found: " + actualCount);
+			System.out.println("✅ Course count validation passed.");
+			System.out.println("✅ PG Program course count verified successfully: " + actualCount);
 
 			
 			 }catch (Exception e) {
