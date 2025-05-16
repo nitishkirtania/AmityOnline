@@ -1792,320 +1792,320 @@ public class MBAProgram extends HeaderBaseClass{
 	// }
 	
 	
-	// @Test
-	// public void ugProgramSection() {
-	//     test = reports.createTest("Click 'UG Program'");
+	//  @Test
+	//  public void ugProgramSection() {
+	//      test = reports.createTest("Click 'UG Program'");
 
-	//     try {
-	//         // Click 'SHOW MORE BUTTON'
-	//         WebElement showMoreBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn);
-	// 		test.log(Status.PASS, "'SHOW MORE' clicked via JS.");
-	//         // Click 'Bachelor of Computer Applications'
-	//         WebElement bcaLink = wait.until(ExpectedConditions.elementToBeClickable(
-    //         By.xpath("//a[normalize-space()='Bachelor of Computer Applications']")));
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", bcaLink);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", bcaLink);
-	// 		// Verify URL
-	// 		wait.until(ExpectedConditions.urlContains("bachelor-of-computer-applications-online"));
-	// 		String currentUrl = driver.getCurrentUrl();
-	// 		System.out.println("Navigated URL: " + currentUrl);
-	// 		Assert.assertTrue(currentUrl.contains("bachelor-of-computer-applications-online"), "URL mismatch after clicking BCA.");
-	// 		test.log(Status.PASS, "Navigated to BCA page: " + currentUrl);
+	//      try {
+	//          // Click 'SHOW MORE BUTTON'
+	//          WebElement showMoreBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn);
+	//  		test.log(Status.PASS, "'SHOW MORE' clicked via JS.");
+	//          // Click 'Bachelor of Computer Applications'
+	//          WebElement bcaLink = wait.until(ExpectedConditions.elementToBeClickable(
+    //          By.xpath("//a[normalize-space()='Bachelor of Computer Applications']")));
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", bcaLink);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", bcaLink);
+	//  		// Verify URL
+	//  		wait.until(ExpectedConditions.urlContains("bachelor-of-computer-applications-online"));
+	//  		String currentUrl = driver.getCurrentUrl();
+	//  		System.out.println("Navigated URL: " + currentUrl);
+	//  		Assert.assertTrue(currentUrl.contains("bachelor-of-computer-applications-online"), "URL mismatch after clicking BCA.");
+	//  		test.log(Status.PASS, "Navigated to BCA page: " + currentUrl);
 
-	// 		// Go back to previous page
-	// 		driver.navigate().back();
+	//  		// Go back to previous page
+	//  		driver.navigate().back();
 	        
-	//         // Click 'SHOW MORE BUTTON'
-	//         WebElement showMoreBtn2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn2);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn2);
-	//         test.log(Status.PASS, "'SHOW MORE' button clicked (1st time, scroll).");
-	//         // Click 'BCA with specialization in Cloud & Security'
-	//         WebElement bcaWithCloudSecurity = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='BCA with specialization in Cloud & Security']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", bcaWithCloudSecurity);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", bcaWithCloudSecurity);
-	//         wait.until(ExpectedConditions.urlContains("bca-cloud-security-online"));
-	//         String bcaWithCloudSecurityUrl = driver.getCurrentUrl();
-	//         System.out.println("Current URL after navigating to BCA with specialization in Cloud & Security: " + bcaWithCloudSecurityUrl);
-	//         Assert.assertTrue(bcaWithCloudSecurityUrl.contains("bca-cloud-security-online"), "URL does not contain 'bca-cloud-security-online'");
-	//         test.log(Status.PASS, "Navigated to BCA with specialization in Cloud & Security page: " + bcaWithCloudSecurityUrl);
+	//          // Click 'SHOW MORE BUTTON'
+	//          WebElement showMoreBtn2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn2);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn2);
+	//          test.log(Status.PASS, "'SHOW MORE' button clicked (1st time, scroll).");
+	//          // Click 'BCA with specialization in Cloud & Security'
+	//          WebElement bcaWithCloudSecurity = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='BCA with specialization in Cloud & Security']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", bcaWithCloudSecurity);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", bcaWithCloudSecurity);
+	//          wait.until(ExpectedConditions.urlContains("bca-cloud-security-online"));
+	//          String bcaWithCloudSecurityUrl = driver.getCurrentUrl();
+	//          System.out.println("Current URL after navigating to BCA with specialization in Cloud & Security: " + bcaWithCloudSecurityUrl);
+	//          Assert.assertTrue(bcaWithCloudSecurityUrl.contains("bca-cloud-security-online"), "URL does not contain 'bca-cloud-security-online'");
+	//          test.log(Status.PASS, "Navigated to BCA with specialization in Cloud & Security page: " + bcaWithCloudSecurityUrl);
 
-	//         // Go back to previous page
-	//         driver.navigate().back();
+	//          // Go back to previous page
+	//          driver.navigate().back();
 	        
-	//         // Click to 'SHOW MORE BUTTON'
-	//         WebElement showMoreBtn3 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn3);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn3);
-	//         test.log(Status.PASS, "'SHOW MORE' button clicked (3rd time, scroll).");   
-	//         // Click 'BCA with specialization in Data Analytics'
-	//         WebElement bcaWithDataAnalytics = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='BCA with specialization in Data Analytics']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", bcaWithDataAnalytics);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", bcaWithDataAnalytics);
-	//         wait.until(ExpectedConditions.urlContains("bca-data-analytics-online"));
-	//         String bcaWithDataAnalyticsUrl = driver.getCurrentUrl();
-	//         System.out.println("Current URL after navigating to BCA with specialization in Data Analytics: " + bcaWithDataAnalyticsUrl);
-	//         Assert.assertTrue(bcaWithDataAnalyticsUrl.contains("bca-data-analytics-online"), "URL does not contain 'bca-data-analytics-online'");
-	//         test.log(Status.PASS, "Navigated to BCA with specialization in Data Analytics page: " + bcaWithDataAnalyticsUrl);
+	//          // Click to 'SHOW MORE BUTTON'
+	//          WebElement showMoreBtn3 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn3);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn3);
+	//          test.log(Status.PASS, "'SHOW MORE' button clicked (3rd time, scroll).");   
+	//          // Click 'BCA with specialization in Data Analytics'
+	//          WebElement bcaWithDataAnalytics = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='BCA with specialization in Data Analytics']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", bcaWithDataAnalytics);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", bcaWithDataAnalytics);
+	//          wait.until(ExpectedConditions.urlContains("bca-data-analytics-online"));
+	//          String bcaWithDataAnalyticsUrl = driver.getCurrentUrl();
+	//          System.out.println("Current URL after navigating to BCA with specialization in Data Analytics: " + bcaWithDataAnalyticsUrl);
+	//          Assert.assertTrue(bcaWithDataAnalyticsUrl.contains("bca-data-analytics-online"), "URL does not contain 'bca-data-analytics-online'");
+	//          test.log(Status.PASS, "Navigated to BCA with specialization in Data Analytics page: " + bcaWithDataAnalyticsUrl);
 
-	//         // Go back to previous page
-	//         driver.navigate().back();
+	//          // Go back to previous page
+	//          driver.navigate().back();
 	        
-	//         // Click to 'SHOW MORE BUTTON'
-	//         WebElement showMoreBtn4 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn4);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn4);
-	//         test.log(Status.PASS, "'SHOW MORE' button clicked (4rd time, scroll).");
-	//         // Click 'Bachelor of Business Administration'
-	//         WebElement bba = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor of Business Administration']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", bba);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", bba);
-	//         wait.until(ExpectedConditions.urlContains("bachelor-of-business-administration-online"));
-	//         String bbaUrl = driver.getCurrentUrl();
-	//         System.out.println("Current URL after navigating to Bachelor of Business Administration: " + bbaUrl);
-	//         Assert.assertTrue(bbaUrl.contains("bachelor-of-business-administration-online"), "URL does not contain 'bachelor-of-business-administration-online'");
-	//         test.log(Status.PASS, "Navigated to Bachelor of Business Administration: " + bbaUrl);
+	//          // Click to 'SHOW MORE BUTTON'
+	//          WebElement showMoreBtn4 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn4);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn4);
+	//          test.log(Status.PASS, "'SHOW MORE' button clicked (4rd time, scroll).");
+	//          // Click 'Bachelor of Business Administration'
+	//          WebElement bba = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor of Business Administration']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", bba);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", bba);
+	//          wait.until(ExpectedConditions.urlContains("bachelor-of-business-administration-online"));
+	//          String bbaUrl = driver.getCurrentUrl();
+	//          System.out.println("Current URL after navigating to Bachelor of Business Administration: " + bbaUrl);
+	//          Assert.assertTrue(bbaUrl.contains("bachelor-of-business-administration-online"), "URL does not contain 'bachelor-of-business-administration-online'");
+	//          test.log(Status.PASS, "Navigated to Bachelor of Business Administration: " + bbaUrl);
 	        
-	//         // Go back to previous page
-	//         driver.navigate().back();
+	//          // Go back to previous page
+	//          driver.navigate().back();
 	        
-	//         // Click to 'SHOW MORE BUTTON'
-	//         WebElement showMoreBtn5 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn5);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn5);
-	//         test.log(Status.PASS, "'SHOW MORE' button clicked (5rd time, scroll).");
-	//         // Click 'Bachelor of Arts (Journalism and Mass communication)'
-	//         WebElement baJMC = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Bachelor of Arts (Journalism and Mass communicatio')]")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", baJMC);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", baJMC);
-	//         wait.until(ExpectedConditions.urlContains("bachelor-of-arts-journalism-and-mass-communication-online"));
-	//         String baJMCUrl = driver.getCurrentUrl();
-	//         System.out.println("Current URL after navigating to Bachelor of Arts: " + baJMCUrl);
-	//         Assert.assertTrue(baJMCUrl.contains("bachelor-of-arts-journalism-and-mass-communication-online"), "URL does not contain 'bachelor-of-arts-journalism-and-mass-communication-online'");
-	//         test.log(Status.PASS, "Navigated to Bachelor of Arts: " + baJMCUrl);
+	//          // Click to 'SHOW MORE BUTTON'
+	//          WebElement showMoreBtn5 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn5);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn5);
+	//          test.log(Status.PASS, "'SHOW MORE' button clicked (5rd time, scroll).");
+	//          // Click 'Bachelor of Arts (Journalism and Mass communication)'
+	//          WebElement baJMC = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Bachelor of Arts (Journalism and Mass communicatio')]")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", baJMC);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", baJMC);
+	//          wait.until(ExpectedConditions.urlContains("bachelor-of-arts-journalism-and-mass-communication-online"));
+	//          String baJMCUrl = driver.getCurrentUrl();
+	//          System.out.println("Current URL after navigating to Bachelor of Arts: " + baJMCUrl);
+	//          Assert.assertTrue(baJMCUrl.contains("bachelor-of-arts-journalism-and-mass-communication-online"), "URL does not contain 'bachelor-of-arts-journalism-and-mass-communication-online'");
+	//          test.log(Status.PASS, "Navigated to Bachelor of Arts: " + baJMCUrl);
 	        
-	//         // Go back to previous page 
-	//         driver.navigate().back();
+	//          // Go back to previous page 
+	//          driver.navigate().back();
 	        
-	//         // Click to 'SHOW MORE BUTTON'
-	//         WebElement showMoreBtn6 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn6);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn6);
-	//         test.log(Status.PASS, "'SHOW MORE' button clicked (6rd time, scroll).");
-	//         // Click 'Bachelor of Commerce'
-	//         WebElement boc = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor of Commerce']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", boc);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", boc);
-	//         wait.until(ExpectedConditions.urlContains("bachelor-of-commerce-online"));
-	//         String bocUrl = driver.getCurrentUrl();
-	//         System.out.println("Current URL after navigating to Bachelor of Commerce: " + bocUrl);
-	//         Assert.assertTrue(bocUrl.contains("bachelor-of-commerce-online"), "URL does not contain 'bachelor-of-commerce-online'");
-	//         test.log(Status.PASS, "Navigated to Bachelor of Commerce: " + bocUrl);
+	//          // Click to 'SHOW MORE BUTTON'
+	//          WebElement showMoreBtn6 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn6);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn6);
+	//          test.log(Status.PASS, "'SHOW MORE' button clicked (6rd time, scroll).");
+	//          // Click 'Bachelor of Commerce'
+	//          WebElement boc = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor of Commerce']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", boc);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", boc);
+	//          wait.until(ExpectedConditions.urlContains("bachelor-of-commerce-online"));
+	//          String bocUrl = driver.getCurrentUrl();
+	//          System.out.println("Current URL after navigating to Bachelor of Commerce: " + bocUrl);
+	//          Assert.assertTrue(bocUrl.contains("bachelor-of-commerce-online"), "URL does not contain 'bachelor-of-commerce-online'");
+	//          test.log(Status.PASS, "Navigated to Bachelor of Commerce: " + bocUrl);
 	        
-	//         // Go back to previous page
-	//         driver.navigate().back();
+	//          // Go back to previous page
+	//          driver.navigate().back();
 	        
-	//         // Click to 'SHOW MORE BUTTON'
-	//         WebElement showMoreBtn7 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn7);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn7);
-	//         test.log(Status.PASS, "'SHOW MORE' button clicked (7rd time, scroll).");
-	//         // Click 'Bachelor of Arts'
-	//         WebElement ba = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor of Arts']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", ba);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", ba);
-	//         wait.until(ExpectedConditions.urlContains("bachelor-of-arts-online"));
-	//         String baUrl = driver.getCurrentUrl();
-	//         System.out.println("Current URL after navigating to Bachelor of Arts: " + baUrl);
-	//         Assert.assertTrue(baUrl.contains("bachelor-of-arts-online"), "URL does not contain 'bachelor-of-arts-online'");
-	//         test.log(Status.PASS, "Navigated to Bachelor of Arts: " + baUrl);
+	//          // Click to 'SHOW MORE BUTTON'
+	//          WebElement showMoreBtn7 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn7);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn7);
+	//          test.log(Status.PASS, "'SHOW MORE' button clicked (7rd time, scroll).");
+	//          // Click 'Bachelor of Arts'
+	//          WebElement ba = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor of Arts']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", ba);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", ba);
+	//          wait.until(ExpectedConditions.urlContains("bachelor-of-arts-online"));
+	//          String baUrl = driver.getCurrentUrl();
+	//          System.out.println("Current URL after navigating to Bachelor of Arts: " + baUrl);
+	//          Assert.assertTrue(baUrl.contains("bachelor-of-arts-online"), "URL does not contain 'bachelor-of-arts-online'");
+	//          test.log(Status.PASS, "Navigated to Bachelor of Arts: " + baUrl);
 	        
-	//         // Go back to previous page
-	//         driver.navigate().back();
+	//          // Go back to previous page
+	//          driver.navigate().back();
 	        
-	//         // Click to 'SHOW MORE BUTTON'
-	//         WebElement showMoreBtn8 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn8);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn8);
-	//         test.log(Status.PASS, "'SHOW MORE' button clicked (8rd time, scroll).");
-	//         // Click 'Bachelor of Art (Kannada Medium)'
-	//         WebElement baKM = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor of Art (Kannada Medium)']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", baKM);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", baKM);
-	//         wait.until(ExpectedConditions.urlContains("bachelor-of-arts-kannada-online"));
-	//         String baKMUrl = driver.getCurrentUrl();
-	//         System.out.println("Current URL after navigating to Bachelor of Art (Kannada Medium): " + baKMUrl);
-	//         Assert.assertTrue(baKMUrl.contains("bachelor-of-arts-kannada-online"), "URL does not contain 'bachelor-of-arts-kannada-online'");
-	//         test.log(Status.PASS, "Navigated to Bachelor of Art (Kannada Medium): " + baKMUrl);
+	//          // Click to 'SHOW MORE BUTTON'
+	//          WebElement showMoreBtn8 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn8);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn8);
+	//          test.log(Status.PASS, "'SHOW MORE' button clicked (8rd time, scroll).");
+	//          // Click 'Bachelor of Art (Kannada Medium)'
+	//          WebElement baKM = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor of Art (Kannada Medium)']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", baKM);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", baKM);
+	//          wait.until(ExpectedConditions.urlContains("bachelor-of-arts-kannada-online"));
+	//          String baKMUrl = driver.getCurrentUrl();
+	//          System.out.println("Current URL after navigating to Bachelor of Art (Kannada Medium): " + baKMUrl);
+	//          Assert.assertTrue(baKMUrl.contains("bachelor-of-arts-kannada-online"), "URL does not contain 'bachelor-of-arts-kannada-online'");
+	//          test.log(Status.PASS, "Navigated to Bachelor of Art (Kannada Medium): " + baKMUrl);
 	        
-	//         // Go back to previous page
-	//         driver.navigate().back();
+	//          // Go back to previous page
+	//          driver.navigate().back();
 	        
-	//         // Click to 'SHOW MORE BUTTON'
-	//         WebElement showMoreBtn9 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn9);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn9);
-	//         test.log(Status.PASS, "'SHOW MORE' button clicked (9th time, scroll).");
-	//         // Click 'Bachelor of Arts (Malayalam Medium)'
-	//         WebElement baMM = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor of Arts (Malayalam Medium)']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", baMM);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", baMM);
-	//         wait.until(ExpectedConditions.urlContains("bachelor-of-arts-malayalam-online"));
-	//         String baMMUrl = driver.getCurrentUrl();
-	//         System.out.println("Current URL after navigating to Bachelor of Arts (Malayalam Medium): " + baMMUrl);
-	//         Assert.assertTrue(baMMUrl.contains("bachelor-of-arts-malayalam-online"), "URL does not contain 'bachelor-of-arts-malayalam-online'");
-	//         test.log(Status.PASS, "Navigated to Bachelor of Arts (Malayalam Medium): " + baMMUrl);
+	//          // Click to 'SHOW MORE BUTTON'
+	//          WebElement showMoreBtn9 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn9);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn9);
+	//          test.log(Status.PASS, "'SHOW MORE' button clicked (9th time, scroll).");
+	//          // Click 'Bachelor of Arts (Malayalam Medium)'
+	//          WebElement baMM = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor of Arts (Malayalam Medium)']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", baMM);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", baMM);
+	//          wait.until(ExpectedConditions.urlContains("bachelor-of-arts-malayalam-online"));
+	//          String baMMUrl = driver.getCurrentUrl();
+	//          System.out.println("Current URL after navigating to Bachelor of Arts (Malayalam Medium): " + baMMUrl);
+	//          Assert.assertTrue(baMMUrl.contains("bachelor-of-arts-malayalam-online"), "URL does not contain 'bachelor-of-arts-malayalam-online'");
+	//          test.log(Status.PASS, "Navigated to Bachelor of Arts (Malayalam Medium): " + baMMUrl);
 	        
-	//         // Go back to previous page
-	//         driver.navigate().back();
+	//          // Go back to previous page
+	//          driver.navigate().back();
 	        
-	//         // Click to 'SHOW MORE BUTTON'
-	//         WebElement showMoreBtn10 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn10);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn10);
-	//         test.log(Status.PASS, "'SHOW MORE' button clicked (10th time, scroll).");
-	//         // Click 'Bachelor of Arts (Tamil Medium)'
-	//         WebElement baTM = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor of Arts (Tamil Medium)']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", baTM);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", baTM);
-	//         wait.until(ExpectedConditions.urlContains("bachelor-of-arts-tamil-online"));
-	//         String baTMUrl = driver.getCurrentUrl();
-	//         System.out.println("Current URL after navigating to Bachelor of Arts (Tamil Medium): " + baTMUrl);
-	//         Assert.assertTrue(baTMUrl.contains("bachelor-of-arts-tamil-online"), "URL does not contain 'bachelor-of-arts-tamil-online'");
-	//         test.log(Status.PASS, "Navigated to Bachelor of Arts (Tamil Medium): " + baTMUrl);
+	//          // Click to 'SHOW MORE BUTTON'
+	//          WebElement showMoreBtn10 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn10);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn10);
+	//          test.log(Status.PASS, "'SHOW MORE' button clicked (10th time, scroll).");
+	//          // Click 'Bachelor of Arts (Tamil Medium)'
+	//          WebElement baTM = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor of Arts (Tamil Medium)']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", baTM);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", baTM);
+	//          wait.until(ExpectedConditions.urlContains("bachelor-of-arts-tamil-online"));
+	//          String baTMUrl = driver.getCurrentUrl();
+	//          System.out.println("Current URL after navigating to Bachelor of Arts (Tamil Medium): " + baTMUrl);
+	//          Assert.assertTrue(baTMUrl.contains("bachelor-of-arts-tamil-online"), "URL does not contain 'bachelor-of-arts-tamil-online'");
+	//          test.log(Status.PASS, "Navigated to Bachelor of Arts (Tamil Medium): " + baTMUrl);
 	        
-	//         // Go back to previous page
-	//         driver.navigate().back();
+	//          // Go back to previous page
+	//          driver.navigate().back();
 	        
-	//         // Click to 'SHOW MORE BUTTON'
-	//         WebElement showMoreBtn11 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn11);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn11);
-	//         test.log(Status.PASS, "'SHOW MORE' button clicked (11th time, scroll).");
-	//         // Click 'Bachelor of Arts (Telugu Medium)'
-	//         WebElement baTeluguMedium = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor of Arts (Telugu Medium)']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", baTeluguMedium);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", baTeluguMedium);
-	//         wait.until(ExpectedConditions.urlContains("bachelor-of-arts-telugu-online"));
-	//         String baTeluguMediumUrl = driver.getCurrentUrl();
-	//         System.out.println("Current URL after navigating to Bachelor of Arts (Telugu Medium): " + baTeluguMediumUrl);
-	//         Assert.assertTrue(baTeluguMediumUrl.contains("bachelor-of-arts-telugu-online"), "URL does not contain 'bachelor-of-arts-telugu-online'");
-	//         test.log(Status.PASS, "Navigated to Bachelor of Arts (Telugu Medium): " + baTeluguMediumUrl);
+	//          // Click to 'SHOW MORE BUTTON'
+	//          WebElement showMoreBtn11 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn11);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn11);
+	//          test.log(Status.PASS, "'SHOW MORE' button clicked (11th time, scroll).");
+	//          // Click 'Bachelor of Arts (Telugu Medium)'
+	//          WebElement baTeluguMedium = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor of Arts (Telugu Medium)']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", baTeluguMedium);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", baTeluguMedium);
+	//          wait.until(ExpectedConditions.urlContains("bachelor-of-arts-telugu-online"));
+	//          String baTeluguMediumUrl = driver.getCurrentUrl();
+	//          System.out.println("Current URL after navigating to Bachelor of Arts (Telugu Medium): " + baTeluguMediumUrl);
+	//          Assert.assertTrue(baTeluguMediumUrl.contains("bachelor-of-arts-telugu-online"), "URL does not contain 'bachelor-of-arts-telugu-online'");
+	//          test.log(Status.PASS, "Navigated to Bachelor of Arts (Telugu Medium): " + baTeluguMediumUrl);
 	        
-	//         // Go back to previous page
-	//         driver.navigate().back();
+	//          // Go back to previous page
+	//          driver.navigate().back();
 	        
-	//         // Click to 'SHOW MORE BUTTON'
-	//         WebElement showMoreBtn12 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn12);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn12);
-	//         test.log(Status.PASS, "'SHOW MORE' button clicked (12th time, scroll).");
-	//         // Click 'Bachelor of Arts (Hindi Medium)'
-	//         WebElement baHindiMedium = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor of Arts (Hindi Medium)']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", baHindiMedium);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", baHindiMedium);
-	//         wait.until(ExpectedConditions.urlContains("bachelor-of-arts-hindi-medium-online"));
-	//         String baHindiMediumUrl = driver.getCurrentUrl();
-	//         System.out.println("Current URL after navigating to Bachelor of Arts (Hindi Medium): " + baHindiMediumUrl);
-	//         Assert.assertTrue(baHindiMediumUrl.contains("bachelor-of-arts-hindi-medium-online"), "URL does not contain 'bachelor-of-arts-hindi-medium-online'");
-	//         test.log(Status.PASS, "Navigated to Bachelor of Arts (Hindi Medium): " + baHindiMediumUrl);
+	//          // Click to 'SHOW MORE BUTTON'
+	//          WebElement showMoreBtn12 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn12);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn12);
+	//          test.log(Status.PASS, "'SHOW MORE' button clicked (12th time, scroll).");
+	//          // Click 'Bachelor of Arts (Hindi Medium)'
+	//          WebElement baHindiMedium = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor of Arts (Hindi Medium)']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", baHindiMedium);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", baHindiMedium);
+	//          wait.until(ExpectedConditions.urlContains("bachelor-of-arts-hindi-medium-online"));
+	//          String baHindiMediumUrl = driver.getCurrentUrl();
+	//          System.out.println("Current URL after navigating to Bachelor of Arts (Hindi Medium): " + baHindiMediumUrl);
+	//          Assert.assertTrue(baHindiMediumUrl.contains("bachelor-of-arts-hindi-medium-online"), "URL does not contain 'bachelor-of-arts-hindi-medium-online'");
+	//          test.log(Status.PASS, "Navigated to Bachelor of Arts (Hindi Medium): " + baHindiMediumUrl);
 	        
-	// 		// Go back to previous page
-	// 		driver.navigate().back();
+	//  		// Go back to previous page
+	//  		 driver.navigate().back();
 
-	// 		// Click to 'SHOW MORE BUTTON'
-	//         WebElement showMoreBtn13 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn13);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn13);
-	//         test.log(Status.PASS, "'SHOW MORE' button clicked (12th time, scroll).");
-	//         // Click 'B.Com with Specialization in International Finance & Accounting'
-	//         WebElement bComHindiMedium = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'B.Com with Specialization in International Finance')]")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", bComHindiMedium);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", bComHindiMedium);
-	//         wait.until(ExpectedConditions.urlContains("bcom-internationalfinance"));
-	//         String bComHindiMediumUrl = driver.getCurrentUrl();
-	//         System.out.println("Current URL after navigating to B.Com with Specialization in International Finance & Accounting: " + bComHindiMediumUrl);
-	//         Assert.assertTrue(bComHindiMediumUrl.contains("bcom-internationalfinance"), "URL does not contain 'bcom-internationalfinance'");
-	//         test.log(Status.PASS, "Navigated to B.Com with Specialization in International Finance & Accounting: " + bComHindiMediumUrl);
+	//  		// Click to 'SHOW MORE BUTTON'
+	//          WebElement showMoreBtn13 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn13);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn13);
+	//          test.log(Status.PASS, "'SHOW MORE' button clicked (12th time, scroll).");
+	//          // Click 'B.Com with Specialization in International Finance & Accounting'
+	//          WebElement bComHindiMedium = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'B.Com with Specialization in International Finance')]")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", bComHindiMedium);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", bComHindiMedium);
+	//          wait.until(ExpectedConditions.urlContains("bcom-internationalfinance"));
+	//          String bComHindiMediumUrl = driver.getCurrentUrl();
+	//          System.out.println("Current URL after navigating to B.Com with Specialization in International Finance & Accounting: " + bComHindiMediumUrl);
+	//          Assert.assertTrue(bComHindiMediumUrl.contains("bcom-internationalfinance"), "URL does not contain 'bcom-internationalfinance'");
+	//          test.log(Status.PASS, "Navigated to B.Com with Specialization in International Finance & Accounting: " + bComHindiMediumUrl);
 	        
-	// 		// Go back to previous page
-	// 		driver.navigate().back();
+	//  		// Go back to previous page
+	//  		driver.navigate().back();
 
-	// 		// Click to 'SHOW MORE BUTTON'
-	//         WebElement showMoreBtn14 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn14);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn14);
-	//         test.log(Status.PASS, "'SHOW MORE' button clicked (12th time, scroll).");
-	//         // Click 'Bachelor Of Commerce (Honours)'
-	//         WebElement bachelorOfCH = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor Of Commerce (Honours)']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", bachelorOfCH);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", bachelorOfCH);
-	//         wait.until(ExpectedConditions.urlContains("bachelor-of-commerce-honours"));
-	//         String bachelorOfCHUrl = driver.getCurrentUrl();
-	//         System.out.println("Current URL after navigating to Bachelor Of Commerce (Honours): " + bachelorOfCHUrl);
-	//         Assert.assertTrue(bachelorOfCHUrl.contains("bachelor-of-commerce-honours"), "URL does not contain 'bachelor-of-commerce-honours'");
-	//         test.log(Status.PASS, "Navigated to Bachelor Of Commerce (Honours): " + bachelorOfCHUrl);
+	//  		// Click to 'SHOW MORE BUTTON'
+	//          WebElement showMoreBtn14 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn14);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn14);
+	//          test.log(Status.PASS, "'SHOW MORE' button clicked (12th time, scroll).");
+	//          // Click 'Bachelor Of Commerce (Honours)'
+	//          WebElement bachelorOfCH = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor Of Commerce (Honours)']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", bachelorOfCH);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", bachelorOfCH);
+	//          wait.until(ExpectedConditions.urlContains("bachelor-of-commerce-honours"));
+	//          String bachelorOfCHUrl = driver.getCurrentUrl();
+	//          System.out.println("Current URL after navigating to Bachelor Of Commerce (Honours): " + bachelorOfCHUrl);
+	//          Assert.assertTrue(bachelorOfCHUrl.contains("bachelor-of-commerce-honours"), "URL does not contain 'bachelor-of-commerce-honours'");
+	//          test.log(Status.PASS, "Navigated to Bachelor Of Commerce (Honours): " + bachelorOfCHUrl);
 	        
-	// 		// Go back to previous page
-	// 		driver.navigate().back();
+	//  		// Go back to previous page
+	//  		driver.navigate().back();
 
-	// 		// Click to 'SHOW MORE BUTTON'
-	//         WebElement showMoreBtn15 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn15);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn15);
-	//         test.log(Status.PASS, "'SHOW MORE' button clicked (12th time, scroll).");
-	//         // Click 'UG + PG Degree Program'
-	//         WebElement ugPgDegree = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='UG + PG Degree Program']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", ugPgDegree);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", ugPgDegree);
-	//         wait.until(ExpectedConditions.urlContains("ug-pg-degree-set"));
-	//         String ugPgDegreeUrl = driver.getCurrentUrl();
-	//         System.out.println("Current URL after navigating to UG + PG Degree Program: " + ugPgDegreeUrl);
-	//         Assert.assertTrue(ugPgDegreeUrl.contains("ug-pg-degree-set"), "URL does not contain 'ug-pg-degree-set'");
-	//         test.log(Status.PASS, "Navigated to UG + PG Degree Program: " + ugPgDegreeUrl);
+	//  		// Click to 'SHOW MORE BUTTON'
+	//          WebElement showMoreBtn15 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn15);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn15);
+	//          test.log(Status.PASS, "'SHOW MORE' button clicked (12th time, scroll).");
+	//          // Click 'UG + PG Degree Program'
+	//          WebElement ugPgDegree = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='UG + PG Degree Program']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", ugPgDegree);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", ugPgDegree);
+	//          wait.until(ExpectedConditions.urlContains("ug-pg-degree-set"));
+	//          String ugPgDegreeUrl = driver.getCurrentUrl();
+	//          System.out.println("Current URL after navigating to UG + PG Degree Program: " + ugPgDegreeUrl);
+	//          Assert.assertTrue(ugPgDegreeUrl.contains("ug-pg-degree-set"), "URL does not contain 'ug-pg-degree-set'");
+	//          test.log(Status.PASS, "Navigated to UG + PG Degree Program: " + ugPgDegreeUrl);
 	        
-	// 		// Go back to previous page
-	// 		driver.navigate().back();
+	//  		// Go back to previous page
+	//  		driver.navigate().back();
 
-	// 		// Click to 'SHOW MORE BUTTON'
-	//         WebElement showMoreBtn16 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
-	//         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn16);
-	// 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn16);
-	//         test.log(Status.PASS, "'SHOW MORE' button clicked (16th time, scroll).");
+	//  		// Click to 'SHOW MORE BUTTON'
+	//          WebElement showMoreBtn16 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
+	//          ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", showMoreBtn16);
+	//  		((JavascriptExecutor) driver).executeScript("arguments[0].click();", showMoreBtn16);
+	//          test.log(Status.PASS, "'SHOW MORE' button clicked (16th time, scroll).");
 
-	// 		// Wait until the UG Program heading is visible
-	// 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ul[2]")));
-	// 		// System.out.println("✅ 'UG Program' section found.");
+	//  		// Wait until the UG Program heading is visible
+	//  		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ul[2]")));
+	//  		// System.out.println("✅ 'UG Program' section found.");
 
-	// 		// Collect all course links under UG Program
-	// 		List<WebElement> courseElements = driver.findElements(By.xpath("//footer[@class='container mb-8 footer_root__az0w0']//ul[2]//li"));
-	// 		// System.out.println("✅ Found " + courseElements.size() + " course(s).");
+	//  		// Collect all course links under UG Program
+	//  		List<WebElement> courseElements = driver.findElements(By.xpath("//footer[@class='container mb-8 footer_root__az0w0']//ul[2]//li"));
+	//  		// System.out.println("✅ Found " + courseElements.size() + " course(s).");
 
-	// 		// Print out course names
-	// 		for (int i = 0; i < courseElements.size(); i++) {
-	// 			String courseName = courseElements.get(i).getText();
-	// 			System.out.println("  ▶ Course " + (i + 1) + ": " + courseName);
-	// 		}
+	//  		// Print out course names
+	//  		for (int i = 0; i < courseElements.size(); i++) {
+	//  			String courseName = courseElements.get(i).getText();
+	//  			System.out.println("  ▶ Course " + (i + 1) + ": " + courseName);
+	//  		}
 
-	// 		// Verify the count matches expectation
-	// 		int expectedCount = 15;
-	// 		int actualCount = courseElements.size() - 1;
+	//  		// Verify the count matches expectation
+	//  		int expectedCount = 15;
+	//  		int actualCount = courseElements.size() - 1;
 
-	// 		Assert.assertEquals(actualCount, expectedCount,
-	// 				"❌ Mismatch in course count. Expected: " + expectedCount + ", Found: " + actualCount);
-	// 		// System.out.println("✅ Course count validation passed.");
-	// 		System.out.println("✅ UG Program course count verified successfully: " + actualCount);
+	//  		Assert.assertEquals(actualCount, expectedCount,
+	//  				"❌ Mismatch in course count. Expected: " + expectedCount + ", Found: " + actualCount);
+	//  		// System.out.println("✅ Course count validation passed.");
+	//  		System.out.println("✅ UG Program course count verified successfully: " + actualCount);
 
 	        
-	//     }catch (Exception e) {
-	// 			test.log(Status.FAIL, "Test failed with exception: " + e.getMessage());
-	// 			e.printStackTrace(); // Console output
-	// 			Assert.fail("Test failed due to exception.", e); // Preserve original error
-	// 		} 
+	//      }catch (Exception e) {
+	//  			test.log(Status.FAIL, "Test failed with exception: " + e.getMessage());
+	//  			e.printStackTrace(); // Console output
+	//  			Assert.fail("Test failed due to exception.", e); // Preserve original error
+	//  		} 
 	    
-	// }
+	//  }
 
 	@Test
 	public void pgProgramSection() {
@@ -2463,7 +2463,7 @@ public class MBAProgram extends HeaderBaseClass{
 
 			// Wait until the PG Program heading is visible
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ul[3]")));
-			System.out.println("✅ 'PG Program' section found.");
+			System.out.println("✅ 'PG Program' section found.");gi
 
 			// Collect all course links under PG Program
 			List<WebElement> courseElements = driver.findElements(By.xpath(" //footer[@class='container mb-8 footer_root__az0w0']//ul[3]//li"));
@@ -2486,6 +2486,79 @@ public class MBAProgram extends HeaderBaseClass{
 
 			
 			 }catch (Exception e) {
+				test.log(Status.FAIL, "Test failed with exception: " + e.getMessage());
+				e.printStackTrace();
+				Assert.fail("Test failed due to exception.", e);
+			} 
+
+
+	@Test
+	public void Frequently_Asked_Questions() {
+		test=reports.createTest("Frequently Asked Questions");
+		try {
+			// Click 'Frequently_Asked_Questions'
+	        WebElement frequentlyAskedQues = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//h2[normalize-space()='Frequently Asked Questions']")));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", frequentlyAskedQues);
+			// ((JavascriptExecutor) driver).executeScript("arguments[0]", frequentlyAskedQues);
+			test.log(Status.PASS, "'SHOW MORE' clicked via JS.");
+            Thread.sleep(2000);
+        
+            // Click to Arrow Button's 
+            WebElement arrow_button_1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='text-gray-800']//span[@class='FaqWithCategory_icon__KxkUd']//*[name()='svg']")));
+            arrow_button_1.click();
+
+            WebElement arrow_button_2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='md:px-0 px-4 space-y-4']//div[2]//div[1]//span[2]//*[name()='svg']")));
+            arrow_button_2.click();
+
+            WebElement arrow_button_3 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//section[@class='FaqSection_container__X78DX']//div[3]//div[1]//span[2]//*[name()='svg']")));
+            arrow_button_3.click();
+
+            WebElement arrow_button_4 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//section[@class='FaqSection_container__X78DX']//div[4]//div[1]//span[2]//*[name()='svg']")));
+            arrow_button_4.click();
+
+            WebElement arrow_button_5 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//section[@class='FaqSection_container__X78DX']//div[5]//div[1]//span[2]//*[name()='svg']")));
+            arrow_button_5.click();
+            Thread.sleep(2000);
+            
+            // Click to ACADEMIC Button
+            WebElement academic_Button = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='ACADEMICS']")));
+            academic_Button.click();
+            Thread.sleep(2000);
+
+            // Click to Arrow Button's
+            WebElement academic_arrow_button_1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='text-gray-800']//span[@class='FaqWithCategory_icon__KxkUd']//*[name()='svg']")));
+            academic_arrow_button_1.click();
+
+            WebElement academic_arrow_button_2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='md:px-0 px-4 space-y-4']//div[2]//div[1]//span[2]//*[name()='svg']")));
+            academic_arrow_button_2.click();
+
+            WebElement academic_arrow_button_3 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//section[@class='FaqSection_container__X78DX']//div[3]//div[1]//span[2]//*[name()='svg']")));
+            academic_arrow_button_3.click();
+
+            WebElement academic_arrow_button_4 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//section[@class='FaqSection_container__X78DX']//div[4]//div[1]//span[2]//*[name()='svg']")));
+            academic_arrow_button_4.click();
+            Thread.sleep(2000);
+
+            // Click to Admission Button
+            WebElement admission_Button = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='ADMISSION']")));
+            admission_Button.click();
+            Thread.sleep(2000);
+
+            // Click to Arrow Button's
+            WebElement admission_arrow_button_1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='text-gray-800']//span[@class='FaqWithCategory_icon__KxkUd']//*[name()='svg']")));
+            admission_arrow_button_1.click();
+
+            WebElement admission_arrow_button_2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='md:px-0 px-4 space-y-4']//div[2]//div[1]//span[2]//*[name()='svg']")));
+            admission_arrow_button_2.click();
+
+            WebElement admission_arrow_button_3 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//section[@class='FaqSection_container__X78DX']//div[3]//div[1]//span[2]//*[name()='svg']")));
+            admission_arrow_button_3.click();
+
+            WebElement admission_arrow_button_4 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//section[@class='FaqSection_container__X78DX']//div[4]//div[1]//span[2]//*[name()='svg']")));
+            admission_arrow_button_4.click();
+            Thread.sleep(2000);
+
+		}catch (Exception e) {
 				test.log(Status.FAIL, "Test failed with exception: " + e.getMessage());
 				e.printStackTrace();
 				Assert.fail("Test failed due to exception.", e);
