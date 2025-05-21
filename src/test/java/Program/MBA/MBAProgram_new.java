@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -16,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.Assert.softAssert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -27,6 +29,7 @@ import com.aventstack.extentreports.Status;
 import Random.RandomDetails;
 import base.HeaderBaseClass;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.netty.handler.timeout.TimeoutException;
 import pages.AccreditationsandRecognitionsPOM;
 import pages.AnnouncementSection;
 import pages.ApplyNowPOM;
@@ -41,7 +44,7 @@ import pages.ShareButton;
 import pages.WhyChooseAmityPOM;
 import screenshot.HeaderScreenShot;
 
-public class MBAProgram extends HeaderBaseClass{
+public class MBAProgram_new extends HeaderBaseClass{
 
 
 	@BeforeMethod
@@ -70,1500 +73,11 @@ public class MBAProgram extends HeaderBaseClass{
 		whychoose=new WhyChooseAmityPOM(driver);
 		accreditations=new AccreditationsandRecognitionsPOM(driver);
 		programoverview=new ProgramOverviewandStructurePOM(driver);
-		softAssert = new SoftAssert(); // ✅ SoftAssert instance
-	}	
-
-	/*
-
-	@Test(priority = 1)
-	public void AmityLogo() {
-		test=reports.createTest("Amity Logo");
-		try {	
-			if (hPom.amitylogoElement.isDisplayed()) {
-				Assert.assertTrue(true);	
-				test.log(Status.PASS, "Amity Logo Visible");
-
-			}else {
-				Assert.assertTrue(false);
-				test.log(Status.FAIL, "Amity Logo Not Visible");
-			}
-
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Amity Logo Not Visible");
-			Assert.fail("Logo Not Displayed" + " " + e.getMessage());
-			throw e;
-		}
-
-
+        softAssert = new SoftAssert(); // ✅ SoftAssert instance
 	}
 
 
 
-
-	@Test(priority = 2)
-	public void HeaderProgram() {
-		test=reports.createTest("HeaderCareerServices");
-		try {
-			JavascriptExecutor js=((JavascriptExecutor)driver);
-			js.executeScript("arguments[0].click();", hPom.programsElement);
-
-			if (hPom.allProgramElement.getText().equals("All Programs")) {
-				Assert.assertTrue(true);
-				test.log(Status.PASS, "Header HeaderCareerServices Working");
-
-			}else {
-				Assert.assertTrue(false);
-				test.log(Status.FAIL, "Header HeaderCareerServices not Working");
-			}
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Header HeaderCareerServices not Working");
-			Assert.fail("Header Program Element is not working" + " " + e.getMessage());
-			throw e;
-		}
-	}
-
-
-
-	@Test(priority = 3)
-	public void HeaderCareerServices() {
-		test=reports.createTest("HeaderCareerServices");
-		try {
-			String parentWindow=driver.getWindowHandle();
-			hPom.Career();
-			Set<String> allwindows = driver.getWindowHandles();
-			Iterator<String> itr = allwindows.iterator();
-			while(itr.hasNext()) {
-				String childWindow=itr.next();
-
-				if (!parentWindow.equals(childWindow)){
-					driver.switchTo().window(childWindow);
-				}			
-			}
-
-			String expectecUrl="https://amityonline.com/career-services";
-			if (expectecUrl.equals(driver.getCurrentUrl())) {
-				Assert.assertTrue(true);
-				test.log(Status.PASS, "Header HeaderCareerServices Working");
-
-			}else {
-				Assert.assertTrue(false);
-				test.log(Status.FAIL, "Header HeaderCareerServices not Working");
-			}
-
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Header HeaderCareerServices not Working");
-			Assert.fail("Career Services element is now working" + " " + e.getMessage());
-			throw e;
-		}
-
-
-	}
-
-
-
-
-	@Test(priority = 4)
-	public void HeaderAdvantages() {
-		test=reports.createTest("HeaderAdvantages");
-		try {
-			JavascriptExecutor js1=((JavascriptExecutor)driver);
-			js1.executeScript("arguments[0].click();", hPom.advantagesElement);
-			String exUrl = "https://amityonline.com/amity-online-advantage";
-			if (exUrl.equals(driver.getCurrentUrl())) {
-				Assert.assertTrue(true);
-				test.log(Status.PASS, "Header HeaderAdvantages Working");
-
-			}else {
-				Assert.assertTrue(false);
-				test.log(Status.FAIL, "Header HeaderAdvantages Working");
-			}
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Header HeaderAdvantages Working");
-			Assert.fail("Advantage element is not working" + " " + e.getMessage());
-			throw e;
-		}
-
-	}
-
-
-
-	@Test(priority = 5)
-	public void HeaderSearch() throws InterruptedException {
-		test=reports.createTest("HeaderSearch");
-		try {
-			JavascriptExecutor js2=((JavascriptExecutor)driver);
-			js2.executeScript("arguments[0].click();", hPom.searchbuttotElement);
-			hPom.searchbuttoncontentElement.sendKeys("master of business");
-			Actions act=new Actions(driver);
-			act.moveToElement(hPom.mbaElement).click().perform();
-			String expmbaElement = "https://amityonline.com/master-of-business-administration-online";
-			if (expmbaElement.equals(driver.getCurrentUrl())) {
-				Assert.assertTrue(true);
-				test.log(Status.PASS, "Header HeaderSearch Working");
-
-			}else {
-				Assert.assertTrue(false);
-				test.log(Status.FAIL, "Header HeaderSearch not Working");
-			}
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Header HeaderSearch not Working");
-			Assert.fail("Search element is now working" + " " + e.getMessage());
-			throw e;
-		}
-
-
-	}
-
-
-
-	@Test(priority = 6)
-	public void HeaderCallUs() {
-		test=reports.createTest("HeaderCallUs");
-		try {
-			JavascriptExecutor js3=((JavascriptExecutor)driver);
-			js3.executeScript("arguments[0].click();", hPom.callusElement);
-			String handle1 = driver.getWindowHandle();
-			driver.switchTo().window(handle1);
-			if (hPom.calluspopcontentElement.getText().equals("Share Your Details And Get A Free Counseling Session")) {
-				Assert.assertTrue(true);
-				test.log(Status.PASS, "Header HeaderCallUs Working");
-
-			}else {
-				Assert.assertTrue(false);
-				test.log(Status.FAIL, "Header HeaderCallUs not Working");
-			}
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Header HeaderCallUs not Working");
-			Assert.fail("Call us element is not working" + " " + e.getMessage());
-			throw e;
-
-		}
-
-
-	}
-
-
-
-	@Test(priority = 7)
-
-	public void HeaderVideoCall() {
-		test=reports.createTest("HeaderVideoCall");
-		try {
-			String Parentwindow1 = driver.getWindowHandle();
-			hPom.VideoCall();
-			Set<String> allWindow = driver.getWindowHandles();
-			Iterator<String> itr1 = allWindow.iterator();
-			while(itr1.hasNext()) {
-				String childWindow1 = itr1.next();
-				if (!Parentwindow1.equals(childWindow1)) {
-					driver.switchTo().window(childWindow1);
-				}
-
-			}
-
-			String expVideourl = "https://widget01.popin.to/share/12338";
-			if (expVideourl.equals(driver.getCurrentUrl())) {
-				Assert.assertTrue(true);
-				test.log(Status.PASS, "Header VideoCall Working");
-
-			}else {
-				Assert.assertTrue(false);
-				test.log(Status.FAIL, "Header VideoCall not Working");
-			}
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Header VideoCall not Working");
-			Assert.fail("Header video call element not working" + " " + e.getMessage());
-			throw e;
-		}
-
-	}
-
-
-
-	@Test(priority = 8)
-	public void HeaderStudentLogin() {
-		test=reports.createTest("HeaderStudentLogin");
-		try {
-			JavascriptExecutor js4=((JavascriptExecutor)driver);
-			js4.executeScript("arguments[0].click();", hPom.existingstudentloginElement);
-			String handle2 = driver.getWindowHandle();
-			driver.switchTo().window(handle2);
-			if(hPom.existingstudentloginContentElement.getText().equals("Student Login")) {
-				Assert.assertTrue(true);
-				test.log(Status.PASS, "Header Student Login Working");
-			}else {
-				Assert.assertTrue(false);
-				test.log(Status.FAIL, "Header Student Login not Working");
-			}
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Header Student Login not Working");
-			Assert.fail("Header existing student login not working" + " " + e.getMessage());
-			throw e;
-		}
-	}
-
-
-
-	@Test(priority = 9)
-	public void HeaderApplyNow() {
-		test=reports.createTest("HeaderApplyNow");
-		try {
-			JavascriptExecutor js5=((JavascriptExecutor)driver);
-			js5.executeScript("arguments[0].click();", hPom.applyNowHeaderElement);
-			String handle3 = driver.getWindowHandle();
-			driver.switchTo().window(handle3);
-
-			if (hPom.applynowcontentElement.getText().equals("Connect With Our Counsellor")) {
-				Assert.assertTrue(true);
-				test.log(Status.PASS, "Header Apply Now Working");
-
-			}else {
-				Assert.assertTrue(false);
-				test.log(Status.FAIL, "Header Apply Now not Working");
-			}
-		}catch (Exception e) {
-			test.log(Status.FAIL, 
-					"Header Apply Now not Working " + e.getMessage());
-			Assert.fail("Header Apply Now not working" + " " + e.getMessage());
-			throw e;
-		}
-	}
-
-
-	@Test(priority = 10)
-	public void yelloStrip() {
-		test=reports.createTest("Yellow Strip");
-		try {
-		hPom.YStrip();
-
-		String handle4 = driver.getWindowHandle();
-		driver.switchTo().window(handle4);
-		if (hPom.yellowstripcontentElement.getText().equals("Connect With Our Counsellor")) {
-
-			Assert.assertTrue(true);
-			test.log(Status.PASS, "Yellow Strip is Working");
-
-		}else {
-			Assert.assertTrue(false);
-			test.log(Status.FAIL, "Yellow Strip is not Working");
-		}
-	}catch (Exception e) {
-		test.log(Status.FAIL, "Yellow Strip is not Working");
-		Assert.fail("Yellow Strip is not Working" + " " + e.getMessage());
-		throw e;
-
-	}
-
-
-
-
-	}
-
-/*
-	@Test(priority = 11)
-	public void ApplyNowIndian() throws InterruptedException, NoSuchElementException {
-
-		test=reports.createTest("Apply Now Journey Indian");
-		try {
-
-			String originalWindow = driver.getWindowHandle();
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			WebElement ApplynowBTN = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/main[1]/section[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/button[1]")));
-			ApplynowBTN.click();
-			for (String windowHandle : driver.getWindowHandles()) {
-				if (!windowHandle.equals(originalWindow)) {
-					driver.switchTo().window(windowHandle);
-					break;
-				}
-			}
-
-			// 👇 Re-initialize POM and Wait in new window context
-			Apom = new ApplyNowPOM(driver);
-			wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-
-
-			Thread.sleep(3000);
-
-			Apom.indianBTN.click();
-			Select dropdown=new Select(Apom.countrycodeElement);
-			dropdown.selectByIndex(0);
-
-			// 👇 Generate and Log Random Data
-			String randomMobileNumber = "23" + random.getRandomMobileNumber();
-			String randomName = "TestQA" + " " + random.GetRandomName();
-			String randomEmail = "TestQA_" + random.GetRamdonEmailID() + "@gmail.com";
-
-			test.info("Random Name: " + randomName);
-			test.info("Random Email: " + randomEmail);
-			test.info("Random Mobile Number: " + randomMobileNumber);
-
-			System.out.println("Random Name: " + randomName);
-			System.out.println("Random Email: " + randomEmail);
-			System.out.println("Random Mobile Number: " + randomMobileNumber);
-
-			Apom.nameElement.sendKeys(randomName);
-			Apom.mobiElement.sendKeys(randomMobileNumber);
-			Apom.emailElement.sendKeys(randomEmail);
-			Apom.submitElement.click();
-
-			Thread.sleep(3000);
-
-			String handle = driver.getWindowHandle();
-			driver.switchTo().window(handle);
-
-			wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-			wait.until(ExpectedConditions.elementToBeClickable(Apom.degreeElement)).sendKeys("PG");
-
-			wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-			wait.until(ExpectedConditions.elementToBeClickable(Apom.prograElement)).sendKeys("MASTER OF COMPUTER APPLICATIONS WITH SPECIALIZATION IN CYBER SECURITY");
-
-			Apom.submit2elElement.click();
-
-			Thread.sleep(6000);
-
-			Apom.OTPCell1.sendKeys(random.GetOTP());
-			Apom.OTPCell2.sendKeys(random.GetOTP());
-			Apom.OTPCell3.sendKeys(random.GetOTP());
-			Apom.OTPCell4.sendKeys(random.GetOTP());
-			Apom.OTPCell5.sendKeys(random.GetOTP());
-			Apom.OTPCell6.sendKeys(random.GetOTP());
-
-
-			Apom.VerifyOTP.click();
-
-			Thread.sleep(7000);
-
-
-
-			if (Apom.startapplicationElement.isEnabled()) {
-
-				test.log(Status.PASS, "Apply Now Journey is Successful" );
-				System.out.println("Apply Now journey is Successful");
-
-			}else {
-				test.log(Status.FAIL, "Apply Now Journey is Failed");
-				System.out.println("Apply now journey is Failed");
-			}
-
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Apply Now Journey is Failed" + e.getMessage());
-			throw e; // Re-throw the exception to mark the test as failed in TestNG
-
-
-		} 
-
-	}
-
-
-	@Test(priority = 12)
-	public void ApplyNowInternational() throws Exception {
-
-		test=reports.createTest("Apply Now Journey International");
-		try {
-
-			String originalWindow = driver.getWindowHandle();
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			WebElement ApplynowBTN = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/main[1]/section[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/button[1]")));
-			ApplynowBTN.click();
-			for (String windowHandle : driver.getWindowHandles()) {
-				if (!windowHandle.equals(originalWindow)) {
-					driver.switchTo().window(windowHandle);
-					break;
-				}
-			}
-
-			// 👇 Re-initialize POM and Wait in new window context
-			Apom = new ApplyNowPOM(driver);
-			wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-			Thread.sleep(3000);
-
-			Apom.internationalElement.click();
-			Select dropdown=new Select(Apom.countrycodeElement);
-			dropdown.selectByIndex(2);
-
-			String randomMobileNumber = "23" + random.getRandomMobileNumber();
-			String randomName = "TestQA" + " " + random.GetRandomName();
-			String randomEmail = "TestQA_" + random.GetRamdonEmailID() + "@gmail.com";
-
-			test.info("Random Name: " + randomName);
-			test.info("Random Email: " + randomEmail);
-			test.info("Random Mobile Number: " + randomMobileNumber);
-
-			System.out.println("Random Name: " + randomName);
-			System.out.println("Random Email: " + randomEmail);
-			System.out.println("Random Mobile Number: " + randomMobileNumber);
-
-			Apom.nameElement.sendKeys(randomName);
-			Apom.mobiElement.sendKeys(randomMobileNumber);
-			Apom.emailElement.sendKeys(randomEmail);
-			Apom.submitElement.click();
-
-
-			Thread.sleep(3000);
-
-			String handle2 = driver.getWindowHandle();
-			driver.switchTo().window(handle2);
-
-			wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-			wait.until(ExpectedConditions.elementToBeClickable(Apom.degreeElement)).sendKeys("PG");
-
-			wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-			wait.until(ExpectedConditions.elementToBeClickable(Apom.prograElement)).sendKeys("MASTER OF COMPUTER APPLICATIONS WITH SPECIALIZATION IN CYBER SECURITY");
-
-			Apom.submit2elElement.click();
-
-			Thread.sleep(6000);
-
-			if (Apom.startapplicationElement.isEnabled()) {
-
-				test.log(Status.PASS, "Apply Now Journey is Successful");
-				System.out.println("Apply Now journey is Successful");
-
-			}else {
-				test.log(Status.FAIL, "Apply Now Journey is Failed");
-				System.out.println("Apply now journey is Failed");
-			}
-
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Apply Now Journey is Failed" + e.getMessage());
-			throw e; // Re-throw the exception to mark the test as failed in TestNG
-
-
-		} 
-
-
-	}
-
-
-	 */
-
-	//------------------------------------------------MBA Open form---------------------------------------	
-
-	/*
-
-	@Test(priority = 13)
-	public void OpenformMBAIndia() throws InterruptedException {
-
-		test = reports.createTest("Apply Now Open Form Indian");
-		try {
-
-			String mbaName = "TestQA" + " " + random.GetRandomName();
-			String mbaMobileNumber = "23" + random.getRandomMobileNumber();
-			String mbaEmail = "TestQA_" + random.GetRamdonEmailID() + "@gmail.com";
-
-			test.info("Random Name: " + mbaName);
-			test.info("Random Mobile Number: " + mbaMobileNumber);
-			test.info("Random Email: " + mbaEmail);
-
-
-			System.out.println("Random Name: " + mbaName);
-			System.out.println("Random Email: " + mbaEmail);
-			System.out.println("Random Mobile Number: " + mbaMobileNumber);
-
-
-			openformmba.name.sendKeys(mbaName);
-			openformmba.selectdropdown();
-			openformmba.mobile.sendKeys(mbaMobileNumber);
-			openformmba.email.sendKeys(mbaEmail);
-			openformmba.clicksubmit();
-
-			Thread.sleep(6000);
-
-			openformmba.OTPCell1.sendKeys(random.GetOTP());
-			openformmba.OTPCell2.sendKeys(random.GetOTP());
-			openformmba.OTPCell3.sendKeys(random.GetOTP());
-			openformmba.OTPCell4.sendKeys(random.GetOTP());
-			openformmba.OTPCell5.sendKeys(random.GetOTP());
-			openformmba.OTPCell6.sendKeys(random.GetOTP());
-
-			openformmba.VerifyOTP.click();
-
-			Thread.sleep(7000);
-
-
-
-			if (openformmba.startapplicationElement.isEnabled()) {
-
-				test.log(Status.PASS, "MBA Open form is submitted successfully" );
-				System.out.println("MBA Open form is submitted successfully");
-
-			}else {
-				test.log(Status.FAIL, "MBA Open form is failed");
-				System.out.println("MBA Open form is failed");
-			}
-
-		}catch (Exception e) {
-			test.log(Status.FAIL, "MBA Open form is failed" + e.getMessage());
-			throw e; // Re-throw the exception to mark the test as failed in TestNG
-
-
-		} 
-
-
-	}
-
-
-	@Test(priority = 14)
-	public void OpenformMBAInternational() throws InterruptedException {
-
-		test = reports.createTest("Apply Now Open Form International");
-		try {
-
-			String mbaName = "TestQA" + " " + random.GetRandomName();
-			String mbaMobileNumber = "23" + random.getRandomMobileNumber();
-			String mbaEmail = "TestQA_" + random.GetRamdonEmailID() + "@gmail.com";
-
-			test.info("Random Name: " + mbaName);
-			test.info("Random Mobile Number: " + mbaMobileNumber);
-			test.info("Random Email: " + mbaEmail);
-
-
-			System.out.println("Random Name: " + mbaName);
-			System.out.println("Random Email: " + mbaEmail);
-			System.out.println("Random Mobile Number: " + mbaMobileNumber);
-
-
-			openformmba.name.sendKeys(mbaName);
-			openformmba.selectdropdown1();
-			openformmba.mobile.sendKeys(mbaMobileNumber);
-			openformmba.email.sendKeys(mbaEmail);
-			openformmba.clicksubmit();
-
-
-			Thread.sleep(7000);
-
-
-
-			if (openformmba.startapplicationElement.isEnabled()) {
-
-				test.log(Status.PASS, "MBA Open form is submitted successfully" );
-				System.out.println("MBA Open form is submitted successfully");
-
-			}else {
-				test.log(Status.FAIL, "MBA Open form is failed");
-				System.out.println("MBA Open form is failed");
-			}
-
-		}catch (Exception e) {
-			test.log(Status.FAIL, "MBA Open form is failed" + e.getMessage());
-			throw e; // Re-throw the exception to mark the test as failed in TestNG
-
-
-		} 
-
-
-	}
-
-//---------------------------Download Brochure--------------------------------------------------------------
-
-	@Test(priority = 15)
-	public void DownloadBrochureIndia() throws Exception {
-
-		test=reports.createTest("DownloadBrochure India");
-		try {
-
-		dbrochure.clickbrochure();
-		String handle4 = driver.getWindowHandle();
-		driver.switchTo().window(handle4);
-		dbrochure.selectdropdown();
-
-		String dname = "TestQA" + " " + random.GetRandomName();
-		String dmobilenumber = "23" + random.getRandomMobileNumber();
-		String demailid = "TestQA_" + random.GetRamdonEmailID() + "@gmail.com";
-
-		test.info("Random Name: " + dname);
-		test.info("Random Mobile Number: " + dmobilenumber);
-		test.info("Random Email: " + demailid);
-
-
-		System.out.println("Random Name: " + dname);
-		System.out.println("Random Email: " + demailid);
-		System.out.println("Random Mobile Number: " + dmobilenumber);
-
-        dbrochure.selectdropdown();
-		dbrochure.contactnumberElement.sendKeys(dmobilenumber);
-		dbrochure.usernamElement.sendKeys(dname);
-		dbrochure.useremailElement.sendKeys(demailid);
-		dbrochure.usersubmitbuttonElement.click();
-
-		Thread.sleep(6000);
-
-		dbrochure.OTPCell1.sendKeys(random.GetOTP());
-		dbrochure.OTPCell2.sendKeys(random.GetOTP());
-		dbrochure.OTPCell3.sendKeys(random.GetOTP());
-		dbrochure.OTPCell4.sendKeys(random.GetOTP());
-		dbrochure.OTPCell5.sendKeys(random.GetOTP());
-		dbrochure.OTPCell6.sendKeys(random.GetOTP());
-
-		dbrochure.VerifyOTP.click();
-
-		Thread.sleep(7000);
-
-		dbrochure.proceedbutton.click();
-
-		Thread.sleep(1000);
-
-		dbrochure.switchwindow();
-
-
-		Thread.sleep(2000);
-
-
-
-		if (dbrochure.startapplicationElement.isEnabled()) {
-
-			test.log(Status.PASS, "Download Brochure is working" );
-			System.out.println("Download Brochure is working");
-
-		}else {
-			test.log(Status.FAIL, "Download Brochure is not working");
-			System.out.println("Download Brochure is not working");
-		}
-
-	}catch (Exception e) {
-		test.log(Status.FAIL, "Download Brochure is not working" + e.getMessage());
-		throw e; // Re-throw the exception to mark the test as failed in TestNG
-
-
-	} 
-
-
-}
-
-
-
-	@Test(priority = 16)
-	public void DownloadBrochureInternational() throws Exception {
-
-		test=reports.createTest("DownloadBrochure International");
-		try {
-
-		dbrochure.clickbrochure();
-		String handle4 = driver.getWindowHandle();
-		driver.switchTo().window(handle4);
-		dbrochure.selectdropdown();
-
-		String dname = "TestQA" + " " + random.GetRandomName();
-		String dmobilenumber = "23" + random.getRandomMobileNumber();
-		String demailid = "TestQA_" + random.GetRamdonEmailID() + "@gmail.com";
-
-		test.info("Random Name: " + dname);
-		test.info("Random Mobile Number: " + dmobilenumber);
-		test.info("Random Email: " + demailid);
-
-
-		System.out.println("Random Name: " + dname);
-		System.out.println("Random Email: " + demailid);
-		System.out.println("Random Mobile Number: " + dmobilenumber);
-
-		dbrochure.selectdropdown1();
-		dbrochure.contactnumberElement.sendKeys(dmobilenumber);
-		dbrochure.usernamElement.sendKeys(dname);
-		dbrochure.useremailElement.sendKeys(demailid);
-		dbrochure.usersubmitbuttonElement.click();
-
-		Thread.sleep(7000);
-
-		dbrochure.proceedbutton.click();
-
-		Thread.sleep(1000);
-
-		dbrochure.switchwindow();
-
-
-		Thread.sleep(2000);
-
-
-
-		if (dbrochure.startapplicationElement.isEnabled()) {
-
-			test.log(Status.PASS, "Download Brochure is working" );
-			System.out.println("Download Brochure is working");
-
-		}else {
-			test.log(Status.FAIL, "Download Brochure is not working");
-			System.out.println("Download Brochure is not working");
-		}
-
-	}catch (Exception e) {
-		test.log(Status.FAIL, "Download Brochure is not working" + e.getMessage());
-		throw e; // Re-throw the exception to mark the test as failed in TestNG
-
-
-	} 
-
-
-}
-
-
-//-----------------------------------Share button-----------------------------------------------------------
-
-
-	@Test(priority = 17)
-	public void sharebutton() throws Exception {
-
-	    test = reports.createTest("Share Button");
-
-	     wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-	    try {
-	        sbutton.shareincon();
-	        String handle7 = driver.getWindowHandle();
-	        driver.switchTo().window(handle7);
-
-	        // WhatsApp Icon
-	        try {
-	            wait.until(ExpectedConditions.visibilityOf(sbutton.whatsappElement));
-	            wait.until(ExpectedConditions.elementToBeClickable(sbutton.whatsappElement));
-	            Assert.assertTrue(sbutton.whatsappElement.isDisplayed());
-	            Assert.assertTrue(sbutton.whatsappElement.isEnabled());
-	            test.log(Status.PASS, "WhatsApp icon is displayed and clickable.");
-	        } catch (Exception e) {
-	            test.log(Status.FAIL, "WhatsApp icon check failed: " + e.getMessage());
-	        }
-
-	        // LinkedIn Icon
-	        try {
-	            wait.until(ExpectedConditions.visibilityOf(sbutton.linkediElement));
-	            wait.until(ExpectedConditions.elementToBeClickable(sbutton.linkediElement));
-	            Assert.assertTrue(sbutton.linkediElement.isDisplayed());
-	            Assert.assertTrue(sbutton.linkediElement.isEnabled());
-	            test.log(Status.PASS, "LinkedIn icon is displayed and clickable.");
-	        } catch (Exception e) {
-	            test.log(Status.FAIL, "LinkedIn icon check failed: " + e.getMessage());
-	        }
-
-	        // Facebook Icon
-	        try {
-	            wait.until(ExpectedConditions.visibilityOf(sbutton.facebookElement));
-	            wait.until(ExpectedConditions.elementToBeClickable(sbutton.facebookElement));
-	            Assert.assertTrue(sbutton.facebookElement.isDisplayed());
-	            Assert.assertTrue(sbutton.facebookElement.isEnabled());
-	            test.log(Status.PASS, "Facebook icon is displayed and clickable.");
-	        } catch (Exception e) {
-	            test.log(Status.FAIL, "Facebook icon check failed: " + e.getMessage());
-	        }
-
-	        // X Icon
-	        try {
-	            wait.until(ExpectedConditions.visibilityOf(sbutton.xelElement));
-	            wait.until(ExpectedConditions.elementToBeClickable(sbutton.xelElement));
-	            Assert.assertTrue(sbutton.xelElement.isDisplayed());
-	            Assert.assertTrue(sbutton.xelElement.isEnabled());
-	            test.log(Status.PASS, "X (Twitter) icon is displayed and clickable.");
-	        } catch (Exception e) {
-	            test.log(Status.FAIL, "X (Twitter) icon check failed: " + e.getMessage());
-	        }
-
-	        // Mail Icon
-	        try {
-	            wait.until(ExpectedConditions.visibilityOf(sbutton.mailElement));
-	            wait.until(ExpectedConditions.elementToBeClickable(sbutton.mailElement));
-	            Assert.assertTrue(sbutton.mailElement.isDisplayed());
-	            Assert.assertTrue(sbutton.mailElement.isEnabled());
-	            test.log(Status.PASS, "Mail icon is displayed and clickable.");
-	        } catch (Exception e) {
-	            test.log(Status.FAIL, "Mail icon check failed: " + e.getMessage());
-	        }
-
-	        // Copy Button
-	        try {
-	            wait.until(ExpectedConditions.visibilityOf(sbutton.copyElement));
-	            wait.until(ExpectedConditions.elementToBeClickable(sbutton.copyElement));
-	            Assert.assertTrue(sbutton.copyElement.isDisplayed());
-	            Assert.assertTrue(sbutton.copyElement.isEnabled());
-	            test.log(Status.PASS, "Copy button is displayed and clickable.");
-	        } catch (Exception e) {
-	            test.log(Status.FAIL, "Copy button check failed: " + e.getMessage());
-	        }
-
-	    } catch (Exception e) {
-	        test.log(Status.FAIL, "Share icon interaction failed: " + e.getMessage());
-	        throw e; // Mark test as failed in TestNG
-	    }
-	}
-
-
-
-	//---------------------------------AnnoucementSection--------------------------------------------------------
-
-
-	@Test(priority = 17)
-	public void AnnouncementSection() {
-
-	    test = reports.createTest("Announcement Section");
-
-	    // Scroll the first element into view
-	    JavascriptExecutor js = (JavascriptExecutor) driver;
-	    js.executeScript("arguments[0].scrollIntoView({behavior:'smooth', block:'center'});",
-	                     announcement.scholarshipWebElement);
-
-	    // dynamic wait
-	     wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-	    // Scholarship available
-	    try {
-	        wait.until(ExpectedConditions.visibilityOf(announcement.scholarshipWebElement));
-	        Assert.assertTrue(announcement.scholarshipWebElement.isDisplayed());
-	        test.log(Status.PASS, "Scholarship available is visible");
-	    } catch (Exception e) {
-	        test.log(Status.FAIL, "Scholarship available is not visible: " + e.getMessage());
-	    }
-
-	    // Zero Cost EMI cart
-	    try {
-	        wait.until(ExpectedConditions.visibilityOf(announcement.zerocostemiElement));
-	        Assert.assertTrue(announcement.zerocostemiElement.isDisplayed());
-	        test.log(Status.PASS, "Zero cost EMI cart is visible");
-	    } catch (Exception e) {
-	        test.log(Status.FAIL, "Zero cost EMI cart is not visible: " + e.getMessage());
-	    }
-
-	    // Learners cart
-	    try {
-	        wait.until(ExpectedConditions.visibilityOf(announcement.learnersElement));
-	        Assert.assertTrue(announcement.learnersElement.isDisplayed());
-	        test.log(Status.PASS, "Learners cart is visible");
-	    } catch (Exception e) {
-	        test.log(Status.FAIL, "Learners cart is not visible: " + e.getMessage());
-	    }
-
-	    // Admission open cart
-	    try {
-	        wait.until(ExpectedConditions.visibilityOf(announcement.admissionopenElement));
-	        Assert.assertTrue(announcement.admissionopenElement.isDisplayed());
-	        test.log(Status.PASS, "Admission open cart is visible");
-	    } catch (Exception e) {
-	        test.log(Status.FAIL, "Admission open cart is not visible: " + e.getMessage());
-	    }
-	}
-
-
-	@Test
-	public void AnnouncementScholarship() {
-	    test = reports.createTest("Scholarship Announcement Section");
-
-	    // Scroll into view
-	    JavascriptExecutor js = (JavascriptExecutor) driver;
-	    js.executeScript("arguments[0].scrollIntoView();", announcement.scholarshipWebElement);
-
-	    // Dynamic wait for the scholarshipWebElement to be clickable
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    wait.until(ExpectedConditions.elementToBeClickable(announcement.scholarshipWebElement));
-
-	    // Click the scholarship announcement
-	    announcement.scholarshipAccouncement();
-
-	    // Wait for the expected URL to load
-	    wait.until(ExpectedConditions.urlToBe("https://amityonline.com/scholarship"));
-
-	    // Validate the URL
-	    String expScholarshipurl = "https://amityonline.com/scholarship";
-	    if (driver.getCurrentUrl().equals(expScholarshipurl)) {
-	        Assert.assertTrue(true);
-	        test.log(Status.PASS, "Scholarship Available is working");
-	    } else {
-	        Assert.assertTrue(false);
-	        test.log(Status.FAIL, "Scholarship Available is not working");
-		    }
-	}
-
-
-//-----------------------Enhance your career with India's premier UGC-entitled Online Master of Business Administration----------------------------
-
-
-	@Test
-	public void Overview() throws InterruptedException {
-		 test = reports.createTest("Overview Section");
-		// Scroll into view
-		    JavascriptExecutor js = (JavascriptExecutor) driver;
-		    js.executeScript("arguments[0].scrollIntoView();", overview.enhanceElement);
-		    Thread.sleep(2000);
-		  wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		 try {
-		 wait.until(ExpectedConditions.visibilityOf(overview.buildingnationcontaimner));
-		 String actualtext = overview.buildingnationcontaimner.getText();
-         String expectedText=overview.enhanceElement.getText();
-		 Assert.assertEquals(actualtext, expectedText);
-			 test.log(Status.PASS, "Building Nation container text is displayed correctly.");
-		 }catch (Exception e) {
-			 test.log(Status.FAIL, "Text verification failed: " + e.getMessage());
-		        Assert.fail("Text not matching or element not found.");
-		        throw e;
-		}
-
-			 try {
-			 Assert.assertTrue(overview.buildingnationimage.isDisplayed());
-	            Assert.assertTrue(overview.buildingnationimage.isEnabled());
-	            test.log(Status.PASS, "Building Nation image is displayed and Clickable");
-			 }catch (Exception e) {
-				 test.log(Status.FAIL, "Image not found or clickable" + e.getMessage());
-			        Assert.fail("Image not found or clickable");
-			        throw e;
-			}	 
-
-	}
-
-	//-----------------------------------------------Degrees To Dreams: An Amity Online Podcast | Online MBA Program----------------------------------
-
-	@Test
-	public void Podcast() throws InterruptedException {
-		test = reports.createTest("Podcast Section");
-		 JavascriptExecutor js = (JavascriptExecutor) driver;
-		    js.executeScript("arguments[0].scrollIntoView();", podcast.podcastcontainerElement);
-		    Thread.sleep(2000);
-
-		     wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		    wait.until(ExpectedConditions.visibilityOf(podcast.podcastcontainerElement));
-		    String actualtext1 = podcast.podcastcontainerElement.getText();
-		    String extectedtext1 = podcast.podcasttextElement.getText();
-		    Assert.assertEquals(actualtext1, extectedtext1);
-		    test.log(Status.PASS, "Podcast section text verified successfully.");
-
-
-		 // Switch to iframe
-		    WebElement iframe = wait.until(ExpectedConditions.presenceOfElementLocated(
-		        By.xpath("//iframe[contains(@src, 'youtube.com/embed')]")));
-		    driver.switchTo().frame(iframe);
-
-		    // Wait for play button
-		    WebElement playButton = wait.until(ExpectedConditions.visibilityOfElementLocated(
-		        By.cssSelector(".ytp-large-play-button.ytp-button")));
-		    Thread.sleep(2000);
-		    playButton.click();
-		    Thread.sleep(3000);
-
-		 // Verify that the play button turned into a pause button
-		    WebElement pauseButton = wait.until(ExpectedConditions.visibilityOfElementLocated(
-		        By.cssSelector(".ytp-play-button")));
-		    String ariaLabel = pauseButton.getAttribute("aria-label");
-		    Assert.assertTrue(ariaLabel.toLowerCase().contains("pause"), "Pause button not visible.");
-		    test.log(Status.PASS, "Pause button is visible. Video playback confirmed.");
-
-
-	}
-
-
-
-
-	//--------------------------------Program Highlights & Advantages-------------------------------------------------------------
-
-
-	@Test
-	public void ProgramHighlights() throws InterruptedException {
-		test = reports.createTest("Program Highlights Section");
-
-		 JavascriptExecutor js = (JavascriptExecutor) driver;
-		 js.executeScript("arguments[0].scrollIntoView();", programhigh.programhigglightsElement);
-
-		 Thread.sleep(2000);
-
-		  wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-		 try {
-			 wait.until(ExpectedConditions.visibilityOf(programhigh.qSrankingElement));
-		 Assert.assertTrue(programhigh.qSrankingElement.isDisplayed(), "QS Ranked Online MBA is not displayed");
-		 test.log(Status.PASS, "QS Ranked Online MBA is displayed");
-		 }catch (Exception e) {
-			 test.log(Status.FAIL, "QS Ranked Online MBA not displayed");
-			 throw e;
-		}
-
-		 try {
-			 wait.until(ExpectedConditions.visibilityOf(programhigh.aCCAspecializationElement));
-		 Assert.assertTrue(programhigh.aCCAspecializationElement.isDisplayed(), "ACCA specializations is not displayed");
-		 test.log(Status.PASS, "ACCA specializations is displayed");
-		 }catch (Exception e) {
-			 test.log(Status.FAIL, "ACCA specializations not displayed");
-			 throw e;
-		}
-
-		 try {
-			 wait.until(ExpectedConditions.visibilityOf(programhigh.studyanytimElement));
-			 Assert.assertTrue(programhigh.studyanytimElement.isDisplayed(), "Study anytime anywhere is not displayed");
-			 test.log(Status.PASS, "Study anytime anywhere is displayed");
-			 }catch (Exception e) {
-				 test.log(Status.FAIL, "Study anytime anywhere is not displayed");
-				 throw e;
-			}
-
-		 try {
-			 wait.until(ExpectedConditions.visibilityOf(programhigh.realworldElement));
-			 Assert.assertTrue(programhigh.realworldElement.isDisplayed(), "Real World Projects is not displayed");
-			 test.log(Status.PASS, "Real World Projects is displayed");
-			 }catch (Exception e) {
-				 test.log(Status.FAIL, "Real World Projects is not displayed");
-				 Assert.fail("Interest free cart is not visible");
-				 throw e;
-			}
-
-
-
-	}
-
-//----------------------------------------Fee Structure-----------------------------------------------------------------	
-
-	@Test
-	public void feeStructure() throws InterruptedException {
-		test=reports.createTest("Fee Structure");
-		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("arguments[0].scrollIntoView();", feestructure.feeElement);
-
-		Thread.sleep(2000);
-
-		  wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-
-		 try {
-		 wait.until(ExpectedConditions.visibilityOf(feestructure.interestfreeElement));
-		 Assert.assertTrue(feestructure.interestfreeElement.isDisplayed(), "Interest free cart is not visible");
-		 test.log(Status.PASS, "Interest free cart is visible");
-		 }catch (Exception e) {
-			test.log(Status.FAIL, "Interest free cart is not visible" + e.getMessage());
-			throw e;
-		}
-
-		 try {
-			 wait.until(ExpectedConditions.visibilityOf(feestructure.semisterfee));
-			 Assert.assertTrue(feestructure.semisterfee.isDisplayed(), "Per Semester Fee cart is not visible");
-			 test.log(Status.PASS, "Per Semester Fee cart is visible");
-			 }catch (Exception e) {
-				test.log(Status.FAIL, "Per Semester Fee cart is not visible" + e.getMessage());
-				throw e;
-			}
-
-		 try {
-			 wait.until(ExpectedConditions.visibilityOf(feestructure.fulloprogramfeeElement));
-			 Assert.assertTrue(feestructure.fulloprogramfeeElement.isDisplayed(), "Full Program Fee cart is not visible");
-			 test.log(Status.PASS, "Full Program Fee cart is visible");
-			 }catch (Exception e) {
-				test.log(Status.FAIL, "Full Program Fee cart is not visible" + e.getMessage());
-				throw e;
-			}
-
-
-		 try {
-			 wait.until(ExpectedConditions.visibilityOf(feestructure.attractivescholarshipElement));
-			 Assert.assertTrue(feestructure.attractivescholarshipElement.isDisplayed(), "Attractive Scholarships Available cart is not visible");
-			 test.log(Status.PASS, "Attractive Scholarships Available cart is visible");
-			 }catch (Exception e) {
-				test.log(Status.FAIL, "Attractive Scholarships Available cart is not visible" + e.getMessage());
-				throw e;
-			}
-
-
-
-	}
-
-	@Test
-	public void feeStructureEnrollnow() throws InterruptedException {
-	     test=reports.createTest("feeStructure_Enrollnow");	
-	     JavascriptExecutor js=(JavascriptExecutor)driver;
-	     js.executeScript("arguments[0].scrollIntoView();", feestructure.feeElement);
-	     Thread.sleep(2000);
-
-	     wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-
-		 try {
-			 WebElement feestructore = wait.until(ExpectedConditions.elementToBeClickable(feestructure.exploremoWebElement));
-		feestructore.click();
-		wait.until(ExpectedConditions.urlToBe("https://amityonline.com/scholarship"));
-		 String expurl4 = "https://amityonline.com/scholarship";
-		 String acturalurl4 = driver.getCurrentUrl();
-		 Assert.assertEquals(acturalurl4, expurl4);
-		 test.log(Status.PASS, "Explore now button is visible and working");
-		 }catch (Exception e) {
-			test.log(Status.FAIL, "Explore now button is not visible and working");
-			throw e;
-		}
-
-
-	}
-
-	 
-
-	//--------------------------------Why Choose Amity Online?---------------------------------------------------
-
-	@Test
-	public void whychooseamity() throws InterruptedException {
-		test=reports.createTest("Why Chosee Amity");
-		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("arguments[0].scrollIntoView();", whychoose.whychooseamityElement);
-
-		Thread.sleep(2000);
-
-		wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-		try {
-			wait.until(ExpectedConditions.visibilityOf(whychoose.IndustryVisits));
-			Assert.assertTrue(whychoose.IndustryVisits.isDisplayed(), "Industry Visits for Real-World Exposure not displayed");
-			test.log(Status.PASS, "Industry Visits for Real-World Exposure  displayed");
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Industry Visits for Real-World Exposure not displayed");
-			throw e;
-		}
-
-
-		try {
-			List<WebElement> cartimages = driver.findElements(By.xpath("//div[@class='font-raleway WhyAmity_item__KHKMn WhyAmity_centerdItem__5vkFc']"));
-			int expectedCount = 10;
-			int actualCount = cartimages.size();
-			if (actualCount != expectedCount) {
-				test.log(Status.FAIL, "Cart element count mismatch. Expected: " + expectedCount + ", Found: " + actualCount);
-				Assert.fail("Element count mismatch! Expected: " + expectedCount + ", but found: " + actualCount);
-			} else {
-				test.log(Status.PASS, "Cart element count matched: " + actualCount);
-			}
-
-		} catch (Exception e) {
-			test.log(Status.FAIL, "Exception occurred while verifying cart element count: " + e.getMessage());
-			throw e;
-		}
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(whychoose.decidatedacademicElement));
-			Assert.assertTrue(whychoose.decidatedacademicElement.isDisplayed(), "Dedicated academic advisor not displayed");
-			test.log(Status.PASS, "Dedicated academic advisor displayed");
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Dedicated academic advisor not displayed");
-			throw e;
-		}
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(whychoose.aIProfessorAMIelElement));
-			Assert.assertTrue(whychoose.aIProfessorAMIelElement.isDisplayed(), "AI professor AMI not displayed");
-			test.log(Status.PASS, "AI professor AMI displayed");
-		}catch (Exception e) {
-			test.log(Status.FAIL, "AI professor AMI not displayed");
-			throw e;
-		}
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(whychoose.placementOpportunitieselElement));
-			Assert.assertTrue(whychoose.placementOpportunitieselElement.isDisplayed(), "Placement opportunities not displayed");
-			test.log(Status.PASS, "Placement opportunities displayed");
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Placement opportunities not displayed");
-			throw e;
-		}
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(whychoose.diverseLearningMediumselElement));
-			Assert.assertTrue(whychoose.diverseLearningMediumselElement.isDisplayed(), "Diverse learning medinum not displayed");
-			test.log(Status.PASS, "Diverse learning medinum displayed");
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Diverse learning medinum not displayed");
-			throw e;
-		}
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(whychoose.offlineExperienceselElement));
-			Assert.assertTrue(whychoose.offlineExperienceselElement.isDisplayed(), "Offline experiences not displayed");
-			test.log(Status.PASS, "Offline experiences displayed");
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Offline experiences not displayed");
-			throw e;
-		}
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(whychoose.beSocialStudentCommunityPlatformelElement));
-			Assert.assertTrue(whychoose.beSocialStudentCommunityPlatformelElement.isDisplayed(), "beSocial-student community platform not displayed");
-			test.log(Status.PASS, "beSocial-student community platform displayed");
-		}catch (Exception e) {
-			test.log(Status.FAIL, "beSocial-student community platform not displayed");
-			throw e;
-		}
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(whychoose.careerServiceselElement));
-			Assert.assertTrue(whychoose.careerServiceselElement.isDisplayed(), "career services not displayed");
-			test.log(Status.PASS, "career services displayed");
-		}catch (Exception e) {
-			test.log(Status.FAIL, "career services not displayed");
-			throw e;
-		}
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(whychoose.doorstepDeliveryOfBookselElement));
-			Assert.assertTrue(whychoose.doorstepDeliveryOfBookselElement.isDisplayed(), "Door step delivery of books not displayed");
-			test.log(Status.PASS, "Door step delivery of books displayed");
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Door step delivery of books not displayed");
-			throw e;
-		}
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(whychoose.metaverseCampuselElement));
-			Assert.assertTrue(whychoose.metaverseCampuselElement.isDisplayed(), "Metaverse campus not displayed");
-			test.log(Status.PASS, "Metaverse campus displayed");
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Metaverse campus not displayed");
-			throw e;
-		}
-
-	}
-
-	@Test
-	public void fasttrackyourcareer() throws InterruptedException {
-
-		test=reports.createTest("Fast-Track your career button");
-
-		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("arguments[0].scrollIntoView();", whychoose.whychooseamityElement);
-		Thread.sleep(2000);
-
-		wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-		try {
-			WebElement fasttrack = wait.until(ExpectedConditions.elementToBeClickable(whychoose.fasttrackyourcareerElement));
-			fasttrack.click();
-
-			Thread.sleep(2000);
-
-			String handle8 = driver.getWindowHandle();
-			driver.switchTo().window(handle8);
-			if (whychoose.connectcounsellorElement.getText().equals("Connect With Our Counsellor")) {
-				Assert.assertTrue(true);
-				test.log(Status.PASS, "Fast-track your career button is working");
-
-			}else {
-				test.log(Status.FAIL, "Fast-track your career button is working is not working");
-
-			}
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Fast-track your career button is working is not working" + e.getMessage());
-			Assert.fail("Fast-track your career button is working is not working" + e.getMessage());
-			throw e;
-		}
-
-
-
-	}
-
-
-	//--------------------------------Accreditations & Recognitions------------------------------------------------------
-
-	@Test
-	public void Accreditations() throws InterruptedException {
-		test=reports.createTest("Accreditations & Recognitions");
-
-		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("arguments[0].scrollIntoView();", accreditations.accreditationselElement);
-		Thread.sleep(2000);
-
-		accreditations.bullet1.click();
-
-		wait=new WebDriverWait(driver, Duration.ofSeconds(15));
-		
-		
-		
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(accreditations.qSelElement));
-			Assert.assertTrue(accreditations.qSelElement.isDisplayed(), "India's only Online MBA ranked by QS: Asia Pacific Top 10 is not displayed");
-			test.log(Status.PASS, "India's only Online MBA ranked by QS: Asia Pacific Top 10 is displayed");
-
-		}catch (Exception e) {
-			test.log(Status.FAIL, "India's only Online MBA ranked by QS: Asia Pacific Top 10 is not displayed" + e.getMessage());
-			throw e;
-		}
-
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(accreditations.firstUniversityElement));
-			Assert.assertTrue(accreditations.firstUniversityElement.isDisplayed(), "First university in India to receive UGC approval for Online Degrees and Learning Platform is not displayed");
-			test.log(Status.PASS, "First university in India to receive UGC approval for Online Degrees and Learning Platform is displayed");
-		}catch (Exception e) {
-			test.log(Status.FAIL, "First university in India to receive UGC approval for Online Degrees and Learning Platform is not displayed" + e.getMessage());
-			throw e;
-		}
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(accreditations.firstIndianElement));
-			Assert.assertTrue(accreditations.firstIndianElement.isDisplayed(), "First Indian University to be accredited by National Council for Higher Education, Africa is not displayed");
-			test.log(Status.PASS, "First Indian University to be accredited by National Council for Higher Education, Africa is displayed");
-		}catch (Exception e) {
-			test.log(Status.FAIL, "First Indian University to be accredited by National Council for Higher Education, Africa is not displayed" + e.getMessage());
-			throw e;
-		}
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(accreditations.degreeprogramselElement));
-			Assert.assertTrue(accreditations.degreeprogramselElement.isDisplayed(), "Degree programs approved by All India Council of Technical Education is not displayed");
-			test.log(Status.PASS, "Degree programs approved by All India Council of Technical Education is displayed");
-
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Degree programs approved by All India Council of Technical Education is not displayed" + e.getMessage());
-			throw e;
-		}
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(accreditations.digitaleducationcouncilElement));
-			Assert.assertTrue(accreditations.digitaleducationcouncilElement.isDisplayed(), "India's first private university to be a member is not displayed");
-			test.log(Status.PASS, "India's first private university to be a member is displayed");
-		}catch (Exception e) {
-			test.log(Status.FAIL, "India's first private university to be a member is not displayed" + e.getMessage());
-			throw e;
-		}
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(accreditations.rankedamoungElement));
-			Assert.assertTrue(accreditations.rankedamoungElement.isDisplayed(), "Ranked among Top 3% Globally is not displayed");
-			test.log(Status.PASS, "Ranked among Top 3% Globally is displayed");
-
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Ranked among Top 3% Globally is not displayed" + e.getMessage());
-			throw e;
-		}
-
-		accreditations.bullet2.click();
-
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(accreditations.wesElement));
-			Assert.assertTrue(accreditations.wesElement.isDisplayed(), "Accredited by the World Education Services is not displayed");
-			test.log(Status.PASS, "Accredited by the World Education Services is displayed");
-
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Accredited by the World Education Services is not displayed" + e.getMessage());
-			throw e;
-		}
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(accreditations.wascElement));
-			Assert.assertTrue(accreditations.wascElement.isDisplayed(), "Accredited by the Western Association of Schools and College is not displayed");
-			test.log(Status.PASS, "Accredited by the Western Association of Schools and College is displayed");
-
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Accredited by the Western Association of Schools and College is not displayed" + e.getMessage());
-			throw e;
-		}
-
-		accreditations.bullet3.click();
-
-		try {
-			wait.until(ExpectedConditions.visibilityOf(accreditations.nirfElement));
-			Assert.assertTrue(accreditations.nirfElement.isDisplayed(), "Ranked 32 by National Institutional Ranking Framework  is not displayed");
-			test.log(Status.PASS, "Ranked 32 by National Institutional Ranking Framework  is displayed");
-
-		}catch (Exception e) {
-			test.log(Status.FAIL, "Ranked 32 by National Institutional Ranking Framework  is not displayed" + e.getMessage());
-			throw e;
-		}
-
-		List<WebElement> Accrediationscount = driver.findElements(By.xpath("//div[@class='swiper swiper-grid swiper-initialized swiper-horizontal Carousel__blueBullet Carousel__hAuto swiper-backface-hidden']//div[@class='swiper-wrapper AccreditionsRecognitions_CarousalWrapper__py20P']"));
-		System.out.println("Size:- " + Accrediationscount.size());
-		
-	}
-
-*/
-	
-	//-----------------------------Program Overview & Structure-------------------------------------------------------------
-	
-//	@Test
-//	public void programOverviewStructure() throws InterruptedException {
-//		test=reports.createTest("Program Overview & Structure");
-//	
-//		JavascriptExecutor js=(JavascriptExecutor)driver;
-//		js.executeScript("arguments[0].scrollIntoView();", programoverview.programoverviewElement);
-//		Thread.sleep(2000);
-//		wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-//		try {
-//			wait.until(ExpectedConditions.visibilityOf(programoverview.programoverviewElement));
-//		Assert.assertTrue(programoverview.programoverviewElement.isDisplayed(), "Program Overview & Structure is not displayed");
-//		test.log(Status.PASS, "Program Overview & Structure is displayed");
-//		}
-//		catch (Exception e) {
-//			test.log(Status.FAIL, "Program Overview & Structure is not displayed" + e.getMessage());
-//			throw e;
-//		}
-//		
-//		try {
-//		wait.until(ExpectedConditions.elementToBeClickable(programoverview.explorecurriculumElement));
-//		Assert.assertTrue(programoverview.explorecurriculumElement.isEnabled(), "Explore curriculum is not working");
-//		((JavascriptExecutor) driver).executeScript("arguments[0].click();", programoverview.explorecurriculumElement);
-//
-//		String handle10 = driver.getWindowHandle();
-//		driver.switchTo().window(handle10);
-//		if(programoverview.downloadbrochurElement.getText().equals("Download Brochure")) {
-//			Assert.assertTrue(true);
-//		test.log(Status.PASS, "Explore curriculum is working");
-//		
-//		}else {
-//			Assert.assertTrue(false);
-//			test.log(Status.FAIL, "Explore curriculum is not working");
-//		}
-//		}catch (Exception e) {
-//			test.log(Status.FAIL, "Explore curriculum is not working" + e.getMessage());
-//			throw e;
-//		}
-//		
-//		
-//		programoverview.closebuttonElement.click();
-//		
-//		Thread.sleep(1000);
-//		
-//		try {
-//		programoverview.semister1elElement.click();
-//		test.log(Status.PASS, "Semister 1 Dropdown arrrow is working");
-//		}catch (Exception e) {
-//			test.log(Status.FAIL, "Semister 1 Dropdown arrrow  not working");
-//			throw e;
-//		}
-//		Thread.sleep(1000);
-//		
-//		try {
-//		programoverview.semister2elElement.click();
-//		test.log(Status.PASS, "Semister 2 Dropdown arrrow is working");
-//	}catch (Exception e) {
-//		test.log(Status.FAIL, "Semister 2 Dropdown arrrow  not working");
-//		throw e;
-//	}
-//		
-//		Thread.sleep(1000);
-//		
-//		try {
-//		programoverview.semister3elElement.click();
-//		test.log(Status.PASS, "Semister 3 Dropdown arrrow is working");
-//	}catch (Exception e1) {
-//		test.log(Status.FAIL, "Semister 3 Dropdown arrrow  not working");
-//		throw e1;
-//	}
-//		
-//		Thread.sleep(1000);
-//		
-//		try {
-//			programoverview.seminter4elElement.click();
-//			test.log(Status.PASS, "Semister 4 Dropdown arrrow is working");
-//			}catch (Exception e1) {
-//				test.log(Status.FAIL, "Specialization Dropdown arrrow  not working");
-//				throw e1;
-//			}
-//		
-//		Thread.sleep(1000);
-//		
-//		try {
-//		programoverview.specializationselElement.click();
-//		test.log(Status.PASS, "Specialization Dropdown arrrow is working");
-//	}catch (Exception e1) {
-//		test.log(Status.FAIL, "Specialization Dropdown arrrow  not working");
-//		throw e1;
-//	}
-//		try {
-//		wait.until(ExpectedConditions.visibilityOf(programoverview.certificatElement));
-//		if(programoverview.certificatElement.isDisplayed()) {
-//			Assert.assertTrue(true);
-//			test.log(Status.PASS, "Certificate displayed");
-//		}else {
-//		Assert.assertTrue(false);
-//		test.log(Status.FAIL, "Certificate not displayed");
-//		}
-//		}catch (Exception e) {
-//			test.log(Status.FAIL, "Certificate not displayed" + e.getMessage());
-//			throw e;
-//		}
-//} //*[name()='path' and contains(@d,'M18.2648 2')
-	
 public void Showmore() {	  
 	        // Click 'SHOW MORE'
 	        WebElement showMoreBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='show more']")));
@@ -1574,9 +88,11 @@ public void Showmore() {
 	@Test
 	public void FooterSection() throws InterruptedException {
 		test = reports.createTest("Footer Section");
+
 		Showmore();
 		// Thread.sleep(2000);
 	    try {
+            closePopupIfPresent();
 	        // Click 'About us'
 	        WebElement aboutUs = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='About us']")));
 	        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", aboutUs);
@@ -1646,7 +162,6 @@ public void Showmore() {
         // Click 'SHOW MORE' and navigate to 'Leadership'
         try {
             Showmore();
-
             WebElement leadership = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Leadership']")));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", leadership);
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", leadership);
@@ -1664,7 +179,6 @@ public void Showmore() {
         // Click 'SHOW MORE' and navigate to 'Corporate'
         try {
             Showmore();
-
             WebElement corporate = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Corporate']")));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", corporate);
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", corporate);
@@ -1682,7 +196,6 @@ public void Showmore() {
         // Click 'SHOW MORE' and navigate to 'Contact us'
         try {
             Showmore();
-
             WebElement contactUs = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Contact us']")));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", contactUs);
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", contactUs);
@@ -1700,7 +213,6 @@ public void Showmore() {
         // Click 'SHOW MORE' and navigate to 'Privacy Policy'
         try {
             Showmore();
-
             WebElement privacyPolicy = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@target='_self'][normalize-space()='Privacy Policy']")));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", privacyPolicy);
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", privacyPolicy);
@@ -1717,7 +229,6 @@ public void Showmore() {
 
         try {
             Showmore();
-
             // Click 'Student Support'
             WebElement studentSupport = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Student support']")));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", studentSupport);
@@ -1736,7 +247,6 @@ public void Showmore() {
 
         try {
             Showmore();
-
             // Click 'Intellectual Properties'
             WebElement intellectualPro = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Intellectual Properties']")));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", intellectualPro);
@@ -1755,7 +265,6 @@ public void Showmore() {
 
         try {
             Showmore();
-
             // Click 'UGC Approvals'
             WebElement ugcApprovals = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='UGC Approvals']")));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", ugcApprovals);
@@ -1782,7 +291,6 @@ public void resourcesSection() {
     // Step 1: Click 'SHOW MORE' and navigate to Blog
     try {
         Showmore();
-
         WebElement blog = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Blog']")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", blog);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", blog);
@@ -1800,7 +308,6 @@ public void resourcesSection() {
     // Step 2: Click 'SHOW MORE' and navigate to Media
     try {
         Showmore();
-
         WebElement media = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Media']")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", media);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", media);
@@ -1813,7 +320,6 @@ public void resourcesSection() {
         test.log(Status.FAIL, "Navigation to Media page failed: " + e.getMessage());
         softAssert.fail("Navigation to Media page failed: " + e.getMessage());
     }
-
     driver.navigate().back();
 
     softAssert.assertAll();
@@ -1826,7 +332,6 @@ public void ugProgramSection() {
     // Step 1: Navigate to 'Bachelor of Computer Applications'
     try {
         Showmore();
-
         WebElement bcaLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Bachelor of Computer Applications']")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", bcaLink);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", bcaLink);
@@ -1850,7 +355,6 @@ public void ugProgramSection() {
         WebElement bcaWithCloudSecurity = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='BCA with specialization in Cloud & Security']")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", bcaWithCloudSecurity);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", bcaWithCloudSecurity);
-
         wait.until(ExpectedConditions.urlContains("bca-cloud-security-online"));
         String bcaWithCloudSecurityUrl = driver.getCurrentUrl();
         System.out.println("Current URL after navigating to BCA with specialization in Cloud & Security: " + bcaWithCloudSecurityUrl);
@@ -1860,12 +364,10 @@ public void ugProgramSection() {
         test.log(Status.FAIL, "Navigation to BCA with Cloud & Security failed: " + e.getMessage());
         softAssert.fail("Navigation to BCA with Cloud & Security failed: " + e.getMessage());
     }
-
     driver.navigate().back();
 
     try {
     Showmore();
-
     // Click 'BCA with specialization in Data Analytics'
     WebElement bcaWithDataAnalytics = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='BCA with specialization in Data Analytics']")));
     ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", bcaWithDataAnalytics);
@@ -1877,7 +379,6 @@ public void ugProgramSection() {
     test.log(Status.PASS, "Navigated to BCA with specialization in Data Analytics page: " + bcaWithDataAnalyticsUrl);
 
     driver.navigate().back();
-
     } catch (Exception e) {
         test.log(Status.FAIL, "Navigation to BCA with Data Analytics failed: " + e.getMessage());
         softAssert.fail("Navigation to BCA with Data Analytics failed: " + e.getMessage());
@@ -2562,9 +1063,20 @@ public void Frequently_Asked_Questions() {
     softAssert.assertAll(); // Ensure all soft asserts are verified
 }
 
+// Helper method for clicking an arrow element
+    private void clickArrow(String xpath) {
+        try {
+            WebElement arrow = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+            arrow.click();
+            test.log(Status.PASS, "Arrow clicked: " + xpath);
+        } catch (Exception e) {
+            test.log(Status.WARNING, "Arrow not clickable or not found: " + xpath + " | " + e.getMessage());
+        }
+    }
 
 
-@Test
+
+    @Test
     public void meet_our_top_ranked_Section() {
         test = reports.createTest("Verify All 6 Faculty Containers Are Present and Displayed 'Meet Our Top Ranked Section'");
 
@@ -2603,24 +1115,13 @@ public void Frequently_Asked_Questions() {
         softAssert.assertAll();
     }
 
-
-    // Helper method for clicking an arrow element
-    private void clickArrow(String xpath) {
-        try {
-            WebElement arrow = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
-            arrow.click();
-            test.log(Status.PASS, "Arrow clicked: " + xpath);
-        } catch (Exception e) {
-            test.log(Status.WARNING, "Arrow not clickable or not found: " + xpath + " | " + e.getMessage());
-        }
-    }
-
-	    // Employees From Leading Organizations Trust Amity For Lifelong Learning
+    // Employees From Leading Organizations Trust Amity For Lifelong Learning
     @Test
     public void employeesFrom_Leading_Organization() {
     test = reports.createTest("Verify All Company Logos Are Present and Displayed in Carousel");
-
+    closePopupIfPresent();
     try {
+       
         WebElement sectionHeading = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//h2[contains(text(),'Employees From Leading Organizations Trust')]")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", sectionHeading);
@@ -2632,58 +1133,62 @@ public void Frequently_Asked_Questions() {
                 "Wipro", "KPMG", "Aditya Birla", "Dell Technologies", "Hindustan Unilever", "J.P.Morgan", "Infosys", "Accenture", "FlipKart", "Barclays", "Qatar", "GAIL", "Siemens", "Tech Mahindra", "TCS", "Cisco", "SBI", "Cognizant", "Vi", "HDFC", "ICICI", "Mahindra", "Vedanta", "Tata Steel", "Tata Power", "Cipla", "DHL", "Iffco Tokio", "Capgemini", "LTI", "Hero", "Axis Bank", "Bank of Baroda", "HSBC", "DBS", "Delhivery", "Federal Bank", "Grant Thornton", "Car Dekho", "Max Life", "Tata 1mg", "T Series", "Hitachi Vantara"
         ));
 
-        WebElement nextArrow = driver.findElement(By.cssSelector("button[aria-label='Next'] svg"));
-
         Set<String> foundCompanies = new HashSet<>();
-
-        int maxAttempts = 13; // Prevent infinite loop
-        while (maxAttempts-- > 0 && foundCompanies.size() < companies.size()) {
+        int maxClicks = 12;
+        int clickCount = 0;
+        // closePopupIfPresent();
+        while (clickCount++ < maxClicks) {
             for (String company : companies) {
                 if (!foundCompanies.contains(company)) {
                     String xpath = "//img[@title='" + company + "']";
-                    List<WebElement> logos = driver.findElements(By.xpath(xpath));
-
-                    if (!logos.isEmpty() && logos.get(0).isDisplayed()) {
-                        test.log(Status.PASS, "✅ Logo found: " + company);
-                        foundCompanies.add(company);
+                    try {
+                        List<WebElement> logos = driver.findElements(By.xpath(xpath));
+                        if (!logos.isEmpty() && logos.get(0).isDisplayed()) {
+                            test.log(Status.PASS, "✅ Logo found: " + company);
+                            foundCompanies.add(company);
+                        }
+                    } catch (Exception ignored) {
+                        // Do not fail here, wait until all attempts are done
                     }
                 }
             }
 
-            // Exit early if all are found
-            if (foundCompanies.size() == companies.size()) break;
+    if (foundCompanies.size() == companies.size()) break;
 
-            // Click next arrow if available
-            if (nextArrow.isDisplayed() && nextArrow.isEnabled()) {
-                try {
-                        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", nextArrow);
-                    } catch (Exception e) {
-                        nextArrow.click(); // fallback to normal click
-                    }
-            } else {
-                break; // can't scroll further
+    try {
+        // closePopupIfPresent();
+        WebElement nextArrow = driver.findElement(By.cssSelector("button[aria-label='Next'] svg"));
+        if (nextArrow.isDisplayed() && nextArrow.isEnabled()) {
+            try {
+                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", nextArrow);
+            } catch (Exception e) {
+                nextArrow.click(); // fallback
             }
+            Thread.sleep(1000);
+        } else {
+            break;
         }
-        // Report missing companies
+        } catch (NoSuchElementException e) {
+            break;
+        }
+      }
+       // ✅ Final result logging
         for (String company : companies) {
             if (!foundCompanies.contains(company)) {
                 test.log(Status.FAIL, "❌ Logo NOT found: " + company);
                 softAssert.fail("Logo not found: " + company);
             }
         }
+                    } catch (Exception e) {
+                        test.log(Status.FAIL, "❌ Error in employeesFrom_Leading_Organization: " + e.getMessage());
+                        e.printStackTrace();
+                        softAssert.fail("Exception occurred", e);
+                    }
+             softAssert.assertAll();
+         }
 
-            } catch (Exception e) {
-                test.log(Status.FAIL, "❌ Error in employeesFrom_Leading_Organization: " + e.getMessage());
-                e.printStackTrace();
-                softAssert.fail("Exception occurred", e);
-            }
-
-            softAssert.assertAll();
-        }
-
-
-		@Test
-    public void videocall(){
+    @Test
+    public void testimonial_videosPlay(){
         test = reports.createTest("Video Play");
         closePopupIfPresent();
         
@@ -2742,15 +1247,48 @@ public void Frequently_Asked_Questions() {
             e.printStackTrace();
             softAssert.fail("Video 4 play failed", e);
         }
-
         softAssert.assertAll();
     }
 
-		
-		
-		
+    @Test
+    public void TestimonialStudent(){
+        test = reports.createTest("Open_Honest_Reviews_by_our_Learners");
+        // closePopupIfPresent();
+        try {
+            WebElement Open_Honest_Scroll = driver.findElement(By.xpath("//h2[normalize-space()='Open & Honest Reviews by our Learners']"));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", Open_Honest_Scroll);
+            Thread.sleep(2000);
+            test.log(Status.PASS, "Scrolled to the faculty section.");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Failed to scroll to the faculty section: " + e.getMessage());
+            e.printStackTrace();
+            softAssert.fail("Scroll to video section failed", e);
+        }
+        try {
+        Thread.sleep(2000);
+        List<WebElement> testimonialSlides = driver.findElements(By.cssSelector(
+            "div[class='swiper swiper-initialized swiper-horizontal swiper-backface-hidden'] div[class='swiper-wrapper'] div[class*='swiper-slide']"
+        ));
 
-	@AfterMethod
+        int actualCount = testimonialSlides.size();
+        test.log(Status.INFO, "Total testimonial slides found: " + actualCount);
+
+        if (actualCount == 8) {
+            test.log(Status.PASS, "Correct number of testimonial slides found: 8");
+        } else {
+            test.log(Status.FAIL, "Expected 8 testimonial slides but found: " + actualCount);
+            softAssert.fail("Mismatch in testimonial slide count. Expected: 8, Found: " + actualCount);
+        }
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Unable to fetch testimonial slides: " + e.getMessage());
+            e.printStackTrace();
+            softAssert.fail("Fetching testimonial slides failed", e);
+        }
+        softAssert.assertAll();
+    }
+
+
+    @AfterMethod
 	public void CloseBrowser(ITestResult result) throws IOException {
 		String testname=result.getName();
 		String myscreenshot=HeaderScreenShot.takeScreenshot(driver, testname);
@@ -2764,8 +1302,6 @@ public void Frequently_Asked_Questions() {
 		}else if (result.getStatus() == ITestResult.SKIP) {
 			test.addScreenCaptureFromPath(myscreenshot);
 			test.log(Status.SKIP, "Test Skip");
-
-
 		}
 		driver.quit();
 

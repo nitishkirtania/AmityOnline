@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -51,7 +52,7 @@ public class HeaderBaseClass {
 	protected WhyChooseAmityPOM whychoose;
 	protected AccreditationsandRecognitionsPOM accreditations;
 	protected ProgramOverviewandStructurePOM programoverview;
-	
+	protected SoftAssert softAssert;
 	
 
 	@BeforeTest
