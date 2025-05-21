@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
+import javax.swing.text.html.parser.Element;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -24,6 +26,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import com.applitools.eyes.selenium.rendering.WebElementRegion;
 import com.aventstack.extentreports.Status;
 
 import Random.RandomDetails;
@@ -1286,6 +1289,41 @@ public void Frequently_Asked_Questions() {
         }
         softAssert.assertAll();
     }
+
+    @Test
+    public void Potential_Job_roles(){
+        test = reports.createTest("Potential_Job_roles");
+        try {
+            WebElement potential_job_Scroll = driver.findElement(By.cssSelector("section[id='PotentialJobRoles'] div[class='pt-7 lg:pt-7']"));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", potential_job_Scroll);
+            Thread.sleep(2000);
+            test.log(Status.PASS, "Scrolled to the Potential_Job_roles section.");
+            } catch (Exception e) {
+                test.log(Status.FAIL, "Failed to scroll to the Potential_Job_roles section: " + e.getMessage());
+                e.printStackTrace();
+                softAssert.fail("Scroll to Potential_Job_roles failed", e);
+            }
+
+        try{
+            List <WebElement> three_Container =  driver.findElements(By.xpath("//div[@class='JobRolesSection_JobRolesSection__cardContainer__hBWOQ']/child::div"));
+
+            int container_count = three_Container.size();
+            test.log(Status.INFO, "Total container found" + container_count);
+
+            if(container_count == 3) {
+                test.log(Status.PASS, "Correct numbers of container found 3");
+             } else{
+                    test.log(Status.FAIL, "Not get correct container size.." + container_count);
+                    softAssert.fail("Miss match count in potential job roles " + container_count);
+                }
+            } catch (Exception e) {
+                test.log(Status.FAIL, "Failed to Potential_Job_roles section: " + e.getMessage());
+                e.printStackTrace();
+                softAssert.fail("Scroll to Potential_Job_roles section failed", e);
+            }
+        softAssert.assertAll();
+    }
+
 
 
     @AfterMethod
