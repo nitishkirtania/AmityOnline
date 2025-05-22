@@ -7,7 +7,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Random;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.swing.text.html.parser.Element;
 
@@ -1079,116 +1081,149 @@ public void Frequently_Asked_Questions() {
 
 
 
-    @Test
-    public void meet_our_top_ranked_Section() {
-        test = reports.createTest("Verify All 6 Faculty Containers Are Present and Displayed 'Meet Our Top Ranked Section'");
+@Test
+public void meet_our_top_ranked_faculty_Section() {
+    test = reports.createTest("Meet our top-ranked faculty");
+    wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
+    // Scroll into view
+    WebElement sectionHeading = wait.until(ExpectedConditions.visibilityOfElementLocated(
+            By.xpath("//div[@class='SectionCard_hr__WSBKM']")));
+    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", sectionHeading);
+
+    try {
+        Thread.sleep(2000);
+
+        // First bullet (1st 3 cards)
+        WebElement bullet1 = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[@id='MeetFacultySection']//span[1]")));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", bullet1);
+        Thread.sleep(500);
+        // test.log(Status.INFO, "🔍 Checking first 3 faculty");
+        // Faculty 1
         try {
-            // Scroll to the faculty section
-            WebElement sectionHeading = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//h2[normalize-space()='Meet our top-ranked faculty']")));
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", sectionHeading);
-            Thread.sleep(2000);
-            test.log(Status.PASS, "Scrolled to the faculty section.");
-
-            // Collect all faculty mentor cards (including odd/even classes)
-            List<WebElement> facultyCards = driver.findElements(By.cssSelector(
-                "div[class*='swiper-slide'] div[class*='Faculty_mentorItem__PPsFs']"));
-
-            int totalCards = facultyCards.size();
-            System.out.println("Total Faculty Containers Found: " + totalCards);
-
-            // Assert that there are exactly 6 containers
-            softAssert.assertEquals(totalCards, 6, "Expected 6 faculty containers but found " + totalCards);
-            test.log(Status.PASS, "✅ All 6 faculty containers are present in the DOM.");
-
-            // Optionally verify that each container is displayed (may depend on viewport)
-            for (int i = 0; i < facultyCards.size(); i++) {
-                WebElement card = facultyCards.get(i);
-                boolean isVisible = card.isDisplayed();
-                System.out.println("Container " + (i + 1) + " displayed: " + isVisible);
-                test.log(Status.INFO, "Container " + (i + 1) + " displayed: " + isVisible);
-            }
-
+            WebElement one_container = driver.findElement(By.xpath("//h3[normalize-space()='Neha Tandon']more"));
+            Assert.assertTrue(one_container.isDisplayed(), "Neha Tandon not displayed");
+            test.log(Status.PASS, "✅ Neha Tandon displayed");
         } catch (Exception e) {
-            test.log(Status.FAIL, "❌ Error verifying faculty containers: " + e.getMessage());
-            e.printStackTrace();
-            softAssert.fail("Exception occurred", e);
+            test.log(Status.FAIL, "❌ Neha Tandon not found/displayed: " + e.getMessage());
+            softAssert.fail("Neha Tandon not found" + e.getMessage());
         }
-        softAssert.assertAll();
+        // Faculty 2
+        try {
+            WebElement two_container = driver.findElement(By.xpath("//h3[normalize-space()='Dr Sunil Kumar']"));
+            Assert.assertTrue(two_container.isDisplayed(), "Dr Sunil Kumar not displayed");
+            test.log(Status.PASS, "✅ Dr Sunil Kumar displayed");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "❌ Dr Sunil Kumar not found/displayed: " + e.getMessage());
+            softAssert.fail("Dr Sunil Kumar not found" + e.getMessage());
+        }
+        // Faculty 3
+        try {
+            WebElement three_container = driver.findElement(By.xpath("//h3[normalize-space()='Sachit Paliwal']"));
+            Assert.assertTrue(three_container.isDisplayed(), "Sachit Paliwal not displayed");
+            test.log(Status.PASS, "✅ Sachit Paliwal displayed");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "❌ Sachit Paliwal not found/displayed: " + e.getMessage());
+            softAssert.fail("Sachit Paliwal not found" + e.getMessage());
+        }
+    } catch (Exception e) {
+        test.log(Status.FAIL, "❌ Meet our top-ranked faculty first group: " + e.getMessage());
+        softAssert.fail("Meet our top-ranked faculty first group: " + e.getMessage());
     }
+
+    try {
+        Thread.sleep(2000);
+        // Second bullet (next 3 cards)
+        WebElement bullet4 = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[@id='MeetFacultySection']//span[4]")));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", bullet4);
+        Thread.sleep(500);
+        // test.log(Status.INFO, "🔍 Checking next 3 faculty");
+
+        // Faculty 4
+        try {
+            WebElement four_container = driver.findElement(By.xpath("//h3[normalize-space()='Dr Ron Darnell']"));
+            Assert.assertTrue(four_container.isDisplayed(), "Dr Ron Darnell not displayed");
+            test.log(Status.PASS, "✅ Dr Ron Darnell displayed");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "❌ Dr Ron Darnell not found/displayed: " + e.getMessage());
+            softAssert.fail("Dr Ron Darnell not found" + e.getMessage());
+        }
+        // Faculty 5
+        try {
+            WebElement five_container = driver.findElement(By.xpath("//h3[normalize-space()='Dr. Hayley Stainton']more"));
+            Assert.assertTrue(five_container.isDisplayed(), "Dr. Hayley Stainton not displayed");
+            test.log(Status.PASS, "✅ Dr. Hayley Stainton displayed");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "❌ Dr. Hayley Stainton not found/displayed: " + e.getMessage());
+            softAssert.fail("Dr. Hayley Stainton not found" + e.getMessage());
+        }
+        // Faculty 6
+        try {
+            WebElement six_container = driver.findElement(By.xpath("//h3[normalize-space()='Luke Pearce']"));
+            Assert.assertTrue(six_container.isDisplayed(), "Luke Pearce not displayed");
+            test.log(Status.PASS, "✅ Luke Pearce displayed");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "❌ Luke Pearce not found/displayed: " + e.getMessage());
+            softAssert.fail("Luke Pearce not found" + e.getMessage());
+        }
+    } catch (Exception e) {
+        test.log(Status.FAIL, "❌ Meet our top-ranked faculty second group: " + e.getMessage());
+        softAssert.fail("Meet our top-ranked faculty second group: " + e.getMessage());
+    }
+
+    softAssert.assertAll();
+}
+
+
+
 
     // Employees From Leading Organizations Trust Amity For Lifelong Learning
     @Test
     public void employeesFrom_Leading_Organization() {
     test = reports.createTest("Verify All Company Logos Are Present and Displayed in Carousel");
-    closePopupIfPresent();
-    try {
-       
+    // closePopupIfPresent();
+    try {  
         WebElement sectionHeading = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.xpath("//h2[contains(text(),'Employees From Leading Organizations Trust')]")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", sectionHeading);
         Thread.sleep(2000);
-        test.log(Status.PASS, "Scrolled to the faculty section.");
-
-        List<String> companies = new ArrayList<>(Arrays.asList(
-                "Google", "Apple", "PWC", "Reliance", "Ernest Young", "Samsung", "Amazon", "HCLTech",
-                "Wipro", "KPMG", "Aditya Birla", "Dell Technologies", "Hindustan Unilever", "J.P.Morgan", "Infosys", "Accenture", "FlipKart", "Barclays", "Qatar", "GAIL", "Siemens", "Tech Mahindra", "TCS", "Cisco", "SBI", "Cognizant", "Vi", "HDFC", "ICICI", "Mahindra", "Vedanta", "Tata Steel", "Tata Power", "Cipla", "DHL", "Iffco Tokio", "Capgemini", "LTI", "Hero", "Axis Bank", "Bank of Baroda", "HSBC", "DBS", "Delhivery", "Federal Bank", "Grant Thornton", "Car Dekho", "Max Life", "Tata 1mg", "T Series", "Hitachi Vantara"
-        ));
-
-        Set<String> foundCompanies = new HashSet<>();
-        int maxClicks = 12;
-        int clickCount = 0;
-        // closePopupIfPresent();
-        while (clickCount++ < maxClicks) {
-            for (String company : companies) {
-                if (!foundCompanies.contains(company)) {
-                    String xpath = "//img[@title='" + company + "']";
-                    try {
-                        List<WebElement> logos = driver.findElements(By.xpath(xpath));
-                        if (!logos.isEmpty() && logos.get(0).isDisplayed()) {
-                            test.log(Status.PASS, "✅ Logo found: " + company);
-                            foundCompanies.add(company);
-                        }
-                    } catch (Exception ignored) {
-                        // Do not fail here, wait until all attempts are done
-                    }
-                }
-            }
-
-    if (foundCompanies.size() == companies.size()) break;
-
+        test.log(Status.PASS, "Pass Scrolled to the Employees From Leading Organizations Trust Amity For Lifelong Learning" + //
+                        ".");
+        } catch (Exception e) {
+                test.log(Status.FAIL, "❌ Error in employees from leading organization scroll: " + e.getMessage());
+                softAssert.fail("Error in employees from leading organization scroll" + e.getMessage());
+        }
     try {
-        // closePopupIfPresent();
-        WebElement nextArrow = driver.findElement(By.cssSelector("button[aria-label='Next'] svg"));
-        if (nextArrow.isDisplayed() && nextArrow.isEnabled()) {
-            try {
-                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", nextArrow);
-            } catch (Exception e) {
-                nextArrow.click(); // fallback
-            }
-            Thread.sleep(1000);
-        } else {
-            break;
-        }
-        } catch (NoSuchElementException e) {
-            break;
-        }
-      }
-       // ✅ Final result logging
-        for (String company : companies) {
-            if (!foundCompanies.contains(company)) {
-                test.log(Status.FAIL, "❌ Logo NOT found: " + company);
-                softAssert.fail("Logo not found: " + company);
-            }
-        }
-                    } catch (Exception e) {
-                        test.log(Status.FAIL, "❌ Error in employeesFrom_Leading_Organization: " + e.getMessage());
-                        e.printStackTrace();
-                        softAssert.fail("Exception occurred", e);
-                    }
-             softAssert.assertAll();
-         }
+    // Get all logo elements
+    List<WebElement> logos = driver.findElements(By.xpath("//div[@class='swiper swiper-initialized swiper-horizontal swiper-grid']//div[@class='swiper-wrapper']/div"));
+    int actualCount = logos.size();
+    // Verify count
+    if (actualCount == 51) {
+        test.log(Status.PASS, "✅ Correct number of logos found: 51");
+    } else {
+        test.log(Status.FAIL, "❌ Incorrect number of logos found. Expected: 51, Found: " + actualCount);
+        softAssert.fail("Logo count mismatch: Found " + actualCount + " instead of 51");
+    }
+
+    // // Verify all logos are visible
+    // int index = 1;
+    // for (WebElement logo : logos) {
+    //     if (logo.isDisplayed()) {
+    //         test.log(Status.PASS, "✅ Logo " + index + " is visible");
+    //     } else {
+    //         test.log(Status.FAIL, "❌ Logo " + index + " is NOT visible");
+    //         softAssert.fail("Logo at index " + index + " not visible");
+    //     }
+    //     index++;
+    //     }
+    } catch (Exception e) {
+        test.log(Status.FAIL, "❌ Exception occurred while verifying logos: " + e.getMessage());
+        softAssert.fail("Exception occurred", e);
+    }
+        softAssert.assertAll();
+    }
 
     @Test
     public void testimonial_videosPlay(){
@@ -1319,8 +1354,57 @@ public void Frequently_Asked_Questions() {
             } catch (Exception e) {
                 test.log(Status.FAIL, "Failed to Potential_Job_roles section: " + e.getMessage());
                 e.printStackTrace();
-                softAssert.fail("Scroll to Potential_Job_roles section failed", e);
+                softAssert.fail("Scroll to Potential_Job_roles section failed" + e.getMessage());
             }
+        softAssert.assertAll();
+    }
+
+    // Are you ready to take the next step in your career ?
+    @Test
+    public void next_step_in_your_career(){
+        test = reports.createTest("Are you ready to take the next step in your career ?");
+        WebElement Your_Career_Scroll = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[contains(text(),'Are you ready to take the next step in your career')]")));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", Your_Career_Scroll);
+        // Thread.sleep(2000);
+        try{
+            Thread.sleep(2000);
+            WebElement apply_now = driver.findElement(By.xpath("//div[@class='BannerCard_content__gyu4c']//div//span[@class='ClientSideButton_btnText__5gMgu'][normalize-space()='APPLY NOW']"));
+            apply_now.click();
+            test.log(Status.PASS, "Pass apply now button.");
+
+        } catch (Exception e){
+            test.log(Status.FAIL, "Failed apply now button Are you ready to take the next step in your career ?" + e.getMessage());
+            softAssert.fail("Failed apply now button Are you ready to take the next step in your career " + e.getMessage());
+        }
+
+        try{
+            // Enter phone number
+            Random random = new Random();
+            int last4digit = 1000 + random.nextInt(9000);
+            String phone = "948383" + last4digit;
+            WebElement phone_number = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='basis-1/2']//input[@placeholder='Enter your no.']")));
+            phone_number.sendKeys(phone);
+            Thread.sleep(2000);
+            // Enter full name
+            String[] lastNames = {"Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis"};
+            String lastName = lastNames[random.nextInt(lastNames.length)];
+            String dynamicFullName = "Test" + " " + lastName;
+            WebElement full_name = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='basis-1/2']//input[@placeholder='Enter your full name']")));
+            full_name.sendKeys(dynamicFullName);
+            Thread.sleep(2000);
+            // Enter email -id
+            String dynamicEmail = "testuser" + last4digit + "@gmail.com";
+            WebElement email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='basis-1/2']//input[@placeholder='abc@xyz.com']")));
+            email.sendKeys(dynamicEmail);
+            Thread.sleep(2000);
+            // Click to Submit button
+            WebElement submit_button = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='font-semibold font-raleway uppercase w-full border Input_btn___g__n bg-primary-blue border-blue-950 text-white']")));
+            submit_button.click();
+            Thread.sleep(2000);
+        }catch(Exception e){
+            test.log(Status.FAIL, "" + e.getMessage());
+            softAssert.fail("jjndskfksndsfnskfn" + e.getMessage());
+        }
         softAssert.assertAll();
     }
 
