@@ -155,7 +155,7 @@ public void Showmore() {
 	        wait.until(ExpectedConditions.urlContains("student-story"));
 	        String studentstoriesUrl = driver.getCurrentUrl();
 	        System.out.println("Current URL after navigating to Student Stories: " + studentstoriesUrl);
-	        Assert.assertEquals(studentstoriesUrl, "https://amityonline.com/student-story", "URL does not contain 'student-story'");
+	        softAssert.assertEquals(studentstoriesUrl, "https://amityonline.com/student-story", "URL does not contain 'student-story'");
 	        test.log(Status.PASS, "Navigated to Student stories page: " + studentstoriesUrl);
 	    } catch (Exception e) {
 	        test.log(Status.FAIL, "Navigation to Student stories page failed: " + e.getMessage());
@@ -173,7 +173,7 @@ public void Showmore() {
             wait.until(ExpectedConditions.urlContains("leadership"));
             String leadershipUrl = driver.getCurrentUrl();
             System.out.println("Current URL after navigating to Leadership: " + leadershipUrl);
-            Assert.assertEquals(leadershipUrl, "https://amityonline.com/leadership", "URL does not contain 'leadership'");
+            softAssert.assertEquals(leadershipUrl, "https://amityonline.com/leadership", "URL does not contain 'leadership'");
             test.log(Status.PASS, "Navigated to Leadership page: " + leadershipUrl);
         } catch (Exception e) {
             test.log(Status.FAIL, "Navigation to Leadership page failed: " + e.getMessage());
@@ -190,7 +190,7 @@ public void Showmore() {
             wait.until(ExpectedConditions.urlContains("corporates"));
             String corporateUrl = driver.getCurrentUrl();
             System.out.println("Current URL after navigating to Corporate: " + corporateUrl);
-            Assert.assertEquals(corporateUrl, "https://amityonline.com/corporates", "URL does not contain 'corporate'");
+            softAssert.assertEquals(corporateUrl, "https://amityonline.com/corporates", "URL does not contain 'corporate'");
             test.log(Status.PASS, "Navigated to Corporate page: " + corporateUrl);
         } catch (Exception e) {
             test.log(Status.FAIL, "Navigation to Corporate page failed: " + e.getMessage());
@@ -207,7 +207,7 @@ public void Showmore() {
             wait.until(ExpectedConditions.urlContains("contact-us"));
             String contactUrl = driver.getCurrentUrl();
             System.out.println("Current URL after navigating to Contact Us: " + contactUrl);
-            Assert.assertEquals(contactUrl,"https://amityonline.com/contact-us", "URL does not contain 'contact-us'");
+            softAssert.assertEquals(contactUrl,"https://amityonline.com/contact-us", "URL does not contain 'contact-us'");
             test.log(Status.PASS, "Navigated to Contact Us page: " + contactUrl);
         } catch (Exception e) {
             test.log(Status.FAIL, "Navigation to Contact Us page failed: " + e.getMessage());
@@ -224,7 +224,7 @@ public void Showmore() {
             wait.until(ExpectedConditions.urlContains("privacy-policy"));
             String privacyPolicyUrl = driver.getCurrentUrl();
             System.out.println("Current URL after navigating to Privacy Policy: " + privacyPolicyUrl);
-            Assert.assertEquals(privacyPolicyUrl, "https://amityonline.com/privacy-policy", "URL does not contain 'privacy-policy'");
+            softAssert.assertEquals(privacyPolicyUrl, "https://amityonline.com/privacy-policy", "URL does not contain 'privacy-policy'");
             test.log(Status.PASS, "Navigated to Privacy Policy page: " + privacyPolicyUrl);
         } catch (Exception e) {
             test.log(Status.FAIL, "Navigation to Privacy Policy page failed: " + e.getMessage());
@@ -241,7 +241,7 @@ public void Showmore() {
             wait.until(ExpectedConditions.urlContains("home"));
             String studentSupportUrl = driver.getCurrentUrl();
             System.out.println("Current URL after navigating to Student Support: " + studentSupportUrl);
-            Assert.assertEquals(studentSupportUrl, "https://amitysupport.freshdesk.com/support/home", "URL does not contain 'home'");
+            softAssert.assertEquals(studentSupportUrl, "https://amitysupport.freshdesk.com/support/home", "URL does not contain 'home'");
             test.log(Status.PASS, "Navigated to Student Support page: " + studentSupportUrl);
         } catch (Exception e) {
             test.log(Status.FAIL, "Navigation to Student Support page failed: " + e.getMessage());
@@ -259,7 +259,7 @@ public void Showmore() {
             wait.until(ExpectedConditions.urlContains("ip-listing"));
             String intellectualProUrl = driver.getCurrentUrl();
             System.out.println("Current URL after navigating to Intellectual Properties: " + intellectualProUrl);
-            Assert.assertEquals(intellectualProUrl,"https://amityonline.com/ip-listing", "URL does not contain 'ip-listing'");
+            softAssert.assertEquals(intellectualProUrl,"https://amityonline.com/ip-listing", "URL does not contain 'ip-listing'");
             test.log(Status.PASS, "Navigated to Intellectual Properties page: " + intellectualProUrl);
         } catch (Exception e) {
             test.log(Status.FAIL, "Navigation to Intellectual Properties page failed: " + e.getMessage());
@@ -277,7 +277,7 @@ public void Showmore() {
             wait.until(ExpectedConditions.urlContains("ugc_regulations"));
             String ugcApprovalsUrl = driver.getCurrentUrl();
             System.out.println("Current URL after navigating to UGC Approvals: " + ugcApprovalsUrl);
-            Assert.assertEquals(ugcApprovalsUrl, "https://amityonline.com/ugc_regulations/", "URL does not contain 'ugc_regulations'");
+            softAssert.assertEquals(ugcApprovalsUrl, "https://amityonline.com/ugc_regulations/", "URL does not contain 'ugc_regulations'");
             test.log(Status.PASS, "Navigated to UGC Approvals page: " + ugcApprovalsUrl);
         } catch (Exception e) {
             test.log(Status.FAIL, "Navigation to UGC Approvals page failed: " + e.getMessage());
@@ -302,7 +302,7 @@ public void resourcesSection() {
         wait.until(ExpectedConditions.urlContains("blog"));
         String blogUrl = driver.getCurrentUrl();
         System.out.println("Current URL after navigating to Blog: " + blogUrl);
-        Assert.assertEquals(blogUrl, "https://amityonline.com/blog", "URL does not contain 'blog'");
+        softAssert.assertEquals(blogUrl, "https://amityonline.com/blog", "URL does not contain 'blog'");
         test.log(Status.PASS, "Navigated to Blog page: " + blogUrl);
     } catch (Exception e) {
         test.log(Status.FAIL, "Navigation to Blog page failed: " + e.getMessage());
@@ -319,7 +319,7 @@ public void resourcesSection() {
         wait.until(ExpectedConditions.urlContains("news"));
         String mediaUrl = driver.getCurrentUrl();
         System.out.println("Current URL after navigating to Media: " + mediaUrl);
-        Assert.assertEquals(mediaUrl, "https://amityonline.com/news", "URL does not contain 'news'");
+        softAssert.assertEquals(mediaUrl, "https://amityonline.com/news", "URL does not contain 'news'");
         test.log(Status.PASS, "Navigated to Media page: " + mediaUrl);
     } catch (Exception e) {
         test.log(Status.FAIL, "Navigation to Media page failed: " + e.getMessage());
@@ -344,7 +344,7 @@ public void ugProgramSection() {
         wait.until(ExpectedConditions.urlContains("bachelor-of-computer-applications-online"));
         String currentUrl = driver.getCurrentUrl();
         System.out.println("Navigated URL: " + currentUrl);
-        Assert.assertEquals(currentUrl, "https://amityonline.com/bachelor-of-computer-applications-online", "URL mismatch after clicking BCA.");
+        softAssert.assertEquals(currentUrl, "https://amityonline.com/bachelor-of-computer-applications-online", "URL mismatch after clicking BCA.");
         test.log(Status.PASS, "Navigated to BCA page: " + currentUrl);
     } catch (Exception e) {
         test.log(Status.FAIL, "Navigation to BCA page failed: " + e.getMessage());
@@ -363,7 +363,7 @@ public void ugProgramSection() {
         wait.until(ExpectedConditions.urlContains("bca-cloud-security-online"));
         String bcaWithCloudSecurityUrl = driver.getCurrentUrl();
         System.out.println("Current URL after navigating to BCA with specialization in Cloud & Security: " + bcaWithCloudSecurityUrl);
-        Assert.assertEquals(bcaWithCloudSecurityUrl, "https://amityonline.com/bca-cloud-security-online", "URL does not contain 'bca-cloud-security-online'");
+        softAssert.assertEquals(bcaWithCloudSecurityUrl, "https://amityonline.com/bca-cloud-security-online", "URL does not contain 'bca-cloud-security-online'");
         test.log(Status.PASS, "Navigated to BCA with specialization in Cloud & Security page: " + bcaWithCloudSecurityUrl);
     } catch (Exception e) {
         test.log(Status.FAIL, "Navigation to BCA with Cloud & Security failed: " + e.getMessage());
@@ -380,7 +380,7 @@ public void ugProgramSection() {
     wait.until(ExpectedConditions.urlContains("bca-data-analytics-online"));
     String bcaWithDataAnalyticsUrl = driver.getCurrentUrl();
     System.out.println("Current URL after navigating to BCA with specialization in Data Analytics: " + bcaWithDataAnalyticsUrl);
-    Assert.assertEquals(bcaWithDataAnalyticsUrl, "https://amityonline.com/bca-data-analytics-online", "URL does not contain 'bca-data-analytics-online'");
+    softAssert.assertEquals(bcaWithDataAnalyticsUrl, "https://amityonline.com/bca-data-analytics-online", "URL does not contain 'bca-data-analytics-online'");
     test.log(Status.PASS, "Navigated to BCA with specialization in Data Analytics page: " + bcaWithDataAnalyticsUrl);
 
     driver.navigate().back();
@@ -399,7 +399,7 @@ public void ugProgramSection() {
         wait.until(ExpectedConditions.urlContains("bachelor-of-business-administration-online"));
         String bbaUrl = driver.getCurrentUrl();
         System.out.println("Current URL after navigating to Bachelor of Business Administration: " + bbaUrl);
-        Assert.assertEquals(bbaUrl, "https://amityonline.com/bachelor-of-business-administration-online", "URL does not contain 'bachelor-of-business-administration-online'");
+        softAssert.assertEquals(bbaUrl, "https://amityonline.com/bachelor-of-business-administration-online", "URL does not contain 'bachelor-of-business-administration-online'");
         test.log(Status.PASS, "Navigated to Bachelor of Business Administration: " + bbaUrl);
 
         driver.navigate().back();
@@ -419,7 +419,7 @@ public void ugProgramSection() {
         wait.until(ExpectedConditions.urlContains("bachelor-of-arts-journalism-and-mass-communication-online"));
         String baJMCUrl = driver.getCurrentUrl();
         System.out.println("Current URL after navigating to Bachelor of Arts: " + baJMCUrl);
-        Assert.assertEquals(baJMCUrl, "https://amityonline.com/bachelor-of-arts-journalism-and-mass-communication-online", "URL does not contain 'bachelor-of-arts-journalism-and-mass-communication-online'");
+        softAssert.assertEquals(baJMCUrl, "https://amityonline.com/bachelor-of-arts-journalism-and-mass-communication-online", "URL does not contain 'bachelor-of-arts-journalism-and-mass-communication-online'");
         test.log(Status.PASS, "Navigated to Bachelor of Arts: " + baJMCUrl);
 
         driver.navigate().back();
@@ -439,7 +439,7 @@ public void ugProgramSection() {
         wait.until(ExpectedConditions.urlContains("bachelor-of-commerce-online"));
         String bocUrl = driver.getCurrentUrl();
         System.out.println("Current URL after navigating to Bachelor of Commerce: " + bocUrl);
-        Assert.assertEquals(bocUrl, "https://amityonline.com/bachelor-of-commerce-online", "URL does not contain 'bachelor-of-commerce-online'");
+        softAssert.assertEquals(bocUrl, "https://amityonline.com/bachelor-of-commerce-online", "URL does not contain 'bachelor-of-commerce-online'");
         test.log(Status.PASS, "Navigated to Bachelor of Commerce: " + bocUrl);
 
         driver.navigate().back();
@@ -459,7 +459,7 @@ public void ugProgramSection() {
         wait.until(ExpectedConditions.urlContains("bachelor-of-arts-online"));
         String baUrl = driver.getCurrentUrl();
         System.out.println("Current URL after navigating to Bachelor of Arts: " + baUrl);
-        Assert.assertEquals(baUrl, "https://amityonline.com/bachelor-of-arts-online", "URL does not contain 'bachelor-of-arts-online'");
+        softAssert.assertEquals(baUrl, "https://amityonline.com/bachelor-of-arts-online", "URL does not contain 'bachelor-of-arts-online'");
         test.log(Status.PASS, "Navigated to Bachelor of Arts: " + baUrl);
 
         driver.navigate().back();
@@ -478,7 +478,7 @@ public void ugProgramSection() {
 	    wait.until(ExpectedConditions.urlContains("bachelor-of-arts-kannada-online"));
 	    String baKMUrl = driver.getCurrentUrl();
 	    System.out.println("Current URL after navigating to Bachelor of Art (Kannada Medium): " + baKMUrl);
-	    Assert.assertEquals(baKMUrl, "https://amityonline.com/bachelor-of-arts-kannada-online", "URL does not contain 'bachelor-of-arts-kannada-online'");
+	    softAssert.assertEquals(baKMUrl, "https://amityonline.com/bachelor-of-arts-kannada-online", "URL does not contain 'bachelor-of-arts-kannada-online'");
 	    test.log(Status.PASS, "Navigated to Bachelor of Art (Kannada Medium): " + baKMUrl);
 
         driver.navigate().back();
@@ -497,7 +497,7 @@ public void ugProgramSection() {
 	    wait.until(ExpectedConditions.urlContains("bachelor-of-arts-malayalam-online"));
 	    String baMMUrl = driver.getCurrentUrl();
 	    System.out.println("Current URL after navigating to Bachelor of Arts (Malayalam Medium): " + baMMUrl);
-	    Assert.assertEquals(baMMUrl, "https://amityonline.com/bachelor-of-arts-malayalam-online", "URL does not contain 'bachelor-of-arts-malayalam-online'");
+	    softAssert.assertEquals(baMMUrl, "https://amityonline.com/bachelor-of-arts-malayalam-online", "URL does not contain 'bachelor-of-arts-malayalam-online'");
 	    test.log(Status.PASS, "Navigated to Bachelor of Arts (Malayalam Medium): " + baMMUrl);
 
         driver.navigate().back();
@@ -516,7 +516,7 @@ public void ugProgramSection() {
 	    wait.until(ExpectedConditions.urlContains("bachelor-of-arts-tamil-online"));
 	    String baTMUrl = driver.getCurrentUrl();
 	    System.out.println("Current URL after navigating to Bachelor of Arts (Tamil Medium): " + baTMUrl);
-	    Assert.assertEquals(baTMUrl, "https://amityonline.com/bachelor-of-arts-tamil-online", "URL does not contain 'bachelor-of-arts-tamil-online'");
+	    softAssert.assertEquals(baTMUrl, "https://amityonline.com/bachelor-of-arts-tamil-online", "URL does not contain 'bachelor-of-arts-tamil-online'");
 	    test.log(Status.PASS, "Navigated to Bachelor of Arts (Tamil Medium): " + baTMUrl);
 
         driver.navigate().back();
@@ -535,7 +535,7 @@ public void ugProgramSection() {
 	    wait.until(ExpectedConditions.urlContains("bachelor-of-arts-telugu-online"));
 	    String baTeluguMediumUrl = driver.getCurrentUrl();
 	    System.out.println("Current URL after navigating to Bachelor of Arts (Telugu Medium): " + baTeluguMediumUrl);
-	    Assert.assertEquals(baTeluguMediumUrl, "https://amityonline.com/bachelor-of-arts-telugu-online", "URL does not contain 'bachelor-of-arts-telugu-online'");
+	    softAssert.assertEquals(baTeluguMediumUrl, "https://amityonline.com/bachelor-of-arts-telugu-online", "URL does not contain 'bachelor-of-arts-telugu-online'");
 	    test.log(Status.PASS, "Navigated to Bachelor of Arts (Telugu Medium): " + baTeluguMediumUrl);
 
         driver.navigate().back();
@@ -555,7 +555,7 @@ public void ugProgramSection() {
 	    wait.until(ExpectedConditions.urlContains("bachelor-of-arts-hindi-medium-online"));
 	    String baHindiMediumUrl = driver.getCurrentUrl();
 	    System.out.println("Current URL after navigating to Bachelor of Arts (Hindi Medium): " + baHindiMediumUrl);
-	    Assert.assertEquals(baHindiMediumUrl,"https://amityonline.com/bachelor-of-arts-hindi-medium-online", "URL does not contain 'bachelor-of-arts-hindi-medium-online'");
+	    softAssert.assertEquals(baHindiMediumUrl,"https://amityonline.com/bachelor-of-arts-hindi-medium-online", "URL does not contain 'bachelor-of-arts-hindi-medium-online'");
 	    test.log(Status.PASS, "Navigated to Bachelor of Arts (Hindi Medium): " + baHindiMediumUrl);
 
         driver.navigate().back();
@@ -575,7 +575,7 @@ public void ugProgramSection() {
 	    wait.until(ExpectedConditions.urlContains("bcom-internationalfinance"));
 	    String bComHindiMediumUrl = driver.getCurrentUrl();
 	    System.out.println("Current URL after navigating to B.Com with Specialization in International Finance & Accounting: " + bComHindiMediumUrl);
-	    Assert.assertEquals(bComHindiMediumUrl,"https://amityonline.com/bcom-internationalfinance", "URL does not contain 'bcom-internationalfinance'");
+	    softAssert.assertEquals(bComHindiMediumUrl,"https://amityonline.com/bcom-internationalfinance", "URL does not contain 'bcom-internationalfinance'");
 	    test.log(Status.PASS, "Navigated to B.Com with Specialization in International Finance & Accounting: " + bComHindiMediumUrl);
 
         driver.navigate().back();
@@ -595,7 +595,7 @@ public void ugProgramSection() {
 	    wait.until(ExpectedConditions.urlContains("bachelor-of-commerce-honours"));
 	    String bachelorOfCHUrl = driver.getCurrentUrl();
 	    System.out.println("Current URL after navigating to Bachelor Of Commerce (Honours): " + bachelorOfCHUrl);
-	    Assert.assertEquals(bachelorOfCHUrl,"https://amityonline.com/bachelor-of-commerce-honours", "URL does not contain 'bachelor-of-commerce-honours'");
+	    softAssert.assertEquals(bachelorOfCHUrl,"https://amityonline.com/bachelor-of-commerce-honours", "URL does not contain 'bachelor-of-commerce-honours'");
 	    test.log(Status.PASS, "Navigated to Bachelor Of Commerce (Honours): " + bachelorOfCHUrl);
 
         driver.navigate().back();
@@ -615,7 +615,7 @@ public void ugProgramSection() {
 	    wait.until(ExpectedConditions.urlContains("ug-pg-degree-set"));
 	    String ugPgDegreeUrl = driver.getCurrentUrl();
 	    System.out.println("Current URL after navigating to UG + PG Degree Program: " + ugPgDegreeUrl);
-	    Assert.assertEquals(ugPgDegreeUrl, "https://amityonline.com/ug-pg-degree-set", "URL does not contain 'ug-pg-degree-set'");
+	    softAssert.assertEquals(ugPgDegreeUrl, "https://amityonline.com/ug-pg-degree-set", "URL does not contain 'ug-pg-degree-set'");
 	    test.log(Status.PASS, "Navigated to UG + PG Degree Program: " + ugPgDegreeUrl);
 
         driver.navigate().back();
@@ -643,14 +643,14 @@ public void ugProgramSection() {
 	 	int expectedCount = 15;
 	 	int actualCount = courseElements.size() - 1;
 
-	 	Assert.assertEquals(actualCount, expectedCount, "❌ Mismatch in course count. Expected: " + expectedCount + ", Found: " + actualCount);
+	 	softAssert.assertEquals(actualCount, expectedCount, "❌ Mismatch in course count. Expected: " + expectedCount + ", Found: " + actualCount);
 	 	// System.out.println("✅ Course count validation passed.");
 	 	System.out.println("✅ UG Program course count verified successfully: " + actualCount);
 	        
 	    }catch (Exception e) {
 	 		test.log(Status.FAIL, "Test failed with exception: " + e.getMessage());
 	 		e.printStackTrace(); // Console output
-	 		Assert.fail("Test failed due to exception.", e); // Preserve original error
+	 		softAssert.fail("Test failed due to exception.", e); // Preserve original error
 	 	}
     softAssert.assertAll();
 }
@@ -668,7 +668,7 @@ public void ugProgramSection() {
         wait.until(ExpectedConditions.urlContains("master-of-computer-applications-online"));
         String url = driver.getCurrentUrl();
         System.out.println("Navigated to: " + url);
-        Assert.assertEquals(url,"https://amityonline.com/master-of-computer-applications-online");
+        softAssert.assertEquals(url,"https://amityonline.com/master-of-computer-applications-online");
         test.log(Status.PASS, "Navigated to Master of Computer Applications: " + url);
         driver.navigate().back();
     } catch (Exception e) {
@@ -684,7 +684,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", blockchain);
         wait.until(ExpectedConditions.urlContains("mca-blockchain-online"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://amityonline.com/mca-blockchain-online");
+        softAssert.assertEquals(url, "https://amityonline.com/mca-blockchain-online");
         test.log(Status.PASS, "Navigated to Blockchain: " + url);
         driver.navigate().back();
     } catch (Exception e) {
@@ -700,7 +700,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", mlai);
         wait.until(ExpectedConditions.urlContains("mca-machine-learning-and-artificial-intelligence-online"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://amityonline.com/mca-machine-learning-and-artificial-intelligence-online");
+        softAssert.assertEquals(url, "https://amityonline.com/mca-machine-learning-and-artificial-intelligence-online");
         test.log(Status.PASS, "Navigated to ML & AI: " + url);
         driver.navigate().back();
     } catch (Exception e) {
@@ -716,7 +716,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", ml);
         wait.until(ExpectedConditions.urlContains("mca-machine-learning-online"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://amityonline.com/mca-machine-learning-online");
+        softAssert.assertEquals(url, "https://amityonline.com/mca-machine-learning-online");
         test.log(Status.PASS, "Navigated to Machine Learning: " + url);
         driver.navigate().back();
     } catch (Exception e) {
@@ -732,7 +732,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", vr);
         wait.until(ExpectedConditions.urlContains("mca-virtualreality-online"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://amityonline.com/mca-virtualreality-online");
+        softAssert.assertEquals(url, "https://amityonline.com/mca-virtualreality-online");
         test.log(Status.PASS, "Navigated to AR & VR: " + url);
         driver.navigate().back();
     } catch (Exception e) {
@@ -748,7 +748,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", mba);
         wait.until(ExpectedConditions.urlContains("master-of-business-administration-online"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://amityonline.com/master-of-business-administration-online");
+        softAssert.assertEquals(url, "https://amityonline.com/master-of-business-administration-online");
         test.log(Status.PASS, "Navigated to MBA: " + url);
         // driver.navigate().back();
     } catch (Exception e) {
@@ -764,7 +764,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", mba_digitalmarketing);
         wait.until(ExpectedConditions.urlContains("mba-digital-marketing-management-online"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://amityonline.com/mba-digital-marketing-management-online");
+        softAssert.assertEquals(url, "https://amityonline.com/mba-digital-marketing-management-online");
         test.log(Status.PASS, "Navigated to Digital Marketing: " + url);
         driver.navigate().back();
     } catch (Exception e) {
@@ -780,7 +780,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", hr_analytics);
         wait.until(ExpectedConditions.urlContains("mba-human-resources-hr-analytics-online"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://amityonline.com/mba-human-resources-hr-analytics-online");
+        softAssert.assertEquals(url, "https://amityonline.com/mba-human-resources-hr-analytics-online");
         test.log(Status.PASS, "Navigated to HR Analytics: " + url);
         driver.navigate().back();
     } catch (Exception e) {
@@ -796,7 +796,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", ds);
         wait.until(ExpectedConditions.urlContains("mba-data-science-online"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://amityonline.com/mba-data-science-online");
+        softAssert.assertEquals(url, "https://amityonline.com/mba-data-science-online");
         test.log(Status.PASS, "Navigated to Data Science: " + url);
         driver.navigate().back();
     } catch (Exception e) {
@@ -812,7 +812,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", ba);
         wait.until(ExpectedConditions.urlContains("mba-business-analytics-online"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://amityonline.com/mba-business-analytics-online");
+        softAssert.assertEquals(url, "https://amityonline.com/mba-business-analytics-online");
         test.log(Status.PASS, "Navigated to Business Analytics: " + url);
         driver.navigate().back();
     } catch (Exception e) {
@@ -828,7 +828,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", de);
         wait.until(ExpectedConditions.urlContains("mba-digital-entrepreneurship-online"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://amityonline.com/mba-digital-entrepreneurship-online");
+        softAssert.assertEquals(url, "https://amityonline.com/mba-digital-entrepreneurship-online");
         test.log(Status.PASS, "Navigated to Digital Entrepreneurship: " + url);
         driver.navigate().back();
     } catch (Exception e) {
@@ -845,7 +845,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", MA_Jour_Mass_Comm);
         wait.until(ExpectedConditions.urlContains("master-of-arts-journalism-and-mass-communication-online"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://amityonline.com/master-of-arts-journalism-and-mass-communication-online", "URL mismatch after clicking MA Journalism and Mass Communication.");
+        softAssert.assertEquals(url, "https://amityonline.com/master-of-arts-journalism-and-mass-communication-online", "URL mismatch after clicking MA Journalism and Mass Communication.");
         test.log(Status.PASS, "Navigated to MA Journalism and Mass Communication page: " + url);
     } catch (Exception e) {
         test.log(Status.FAIL, "MA Journalism and Mass Communication section failed: " + e.getMessage());
@@ -862,7 +862,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", M_Com_Fintech);
         wait.until(ExpectedConditions.urlContains("mcom-fintech-online"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://amityonline.com/mcom-fintech-online", "URL mismatch after clicking M.Com Fintech.");
+        softAssert.assertEquals(url, "https://amityonline.com/mcom-fintech-online", "URL mismatch after clicking M.Com Fintech.");
         test.log(Status.PASS, "Navigated to M.Com Fintech page: " + url);
     } catch (Exception e) {
         test.log(Status.FAIL, "M.Com Fintech section failed: " + e.getMessage());
@@ -879,7 +879,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", M_Com_FM);
         wait.until(ExpectedConditions.urlContains("master-of-commerce-financial-management-online"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://amityonline.com/master-of-commerce-financial-management-online", "URL mismatch after clicking M.Com Financial Management.");
+        softAssert.assertEquals(url, "https://amityonline.com/master-of-commerce-financial-management-online", "URL mismatch after clicking M.Com Financial Management.");
         test.log(Status.PASS, "Navigated to M.Com Financial Management page: " + url);
     } catch (Exception e) {
         test.log(Status.FAIL, "M.Com Financial Management section failed: " + e.getMessage());
@@ -896,7 +896,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", MA_PPG);
         wait.until(ExpectedConditions.urlContains("ma-public-policy"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://amityonline.com/ma-public-policy", "URL mismatch after clicking MA Public Policy & Governance.");
+        softAssert.assertEquals(url, "https://amityonline.com/ma-public-policy", "URL mismatch after clicking MA Public Policy & Governance.");
         test.log(Status.PASS, "Navigated to MA Public Policy & Governance page: " + url);
         } catch (Exception e) {
             test.log(Status.FAIL, "MA Public Policy & Governance section failed: " + e.getMessage());
@@ -913,7 +913,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", MA_Psych);
         wait.until(ExpectedConditions.urlContains("ma-in-psychology"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url,"https://amityonline.com/ma-in-psychology", "URL mismatch after clicking MA Psychology.");
+        softAssert.assertEquals(url,"https://amityonline.com/ma-in-psychology", "URL mismatch after clicking MA Psychology.");
         test.log(Status.PASS, "Navigated to MA Psychology page: " + url);
     } catch (Exception e) {
         test.log(Status.FAIL, "MA Psychology section failed: " + e.getMessage());
@@ -930,7 +930,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", MSc_DS);
         wait.until(ExpectedConditions.urlContains("msc-in-data-science"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://amityonline.com/msc-in-data-science", "URL mismatch after clicking MSc Data Science.");
+        softAssert.assertEquals(url, "https://amityonline.com/msc-in-data-science", "URL mismatch after clicking MSc Data Science.");
         test.log(Status.PASS, "Navigated to MSc Data Science page: " + url);
     } catch (Exception e) {
         test.log(Status.FAIL, "MSc Data Science section failed: " + e.getMessage());
@@ -947,7 +947,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", MBA_Dual);
         wait.until(ExpectedConditions.urlContains("mba-dual-specialization"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url, "https://amityonline.com/mba-dual-specialization", "URL mismatch after clicking MBA Dual Specialization.");
+        softAssert.assertEquals(url, "https://amityonline.com/mba-dual-specialization", "URL mismatch after clicking MBA Dual Specialization.");
         test.log(Status.PASS, "Navigated to MBA Dual Specialization page: " + url);
     } catch (Exception e) {
         test.log(Status.FAIL, "MBA Dual Specialization section failed: " + e.getMessage());
@@ -964,7 +964,7 @@ public void ugProgramSection() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", MBA_GM);
         wait.until(ExpectedConditions.urlContains("mba-general-management"));
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url,"https://amityonline.com/mba-general-management", "URL mismatch after clicking MBA General Management.");
+        softAssert.assertEquals(url,"https://amityonline.com/mba-general-management", "URL mismatch after clicking MBA General Management.");
         test.log(Status.PASS, "Navigated to MBA General Management page: " + url);
     } catch (Exception e) {
         test.log(Status.FAIL, "MBA General Management section failed: " + e.getMessage());
@@ -991,11 +991,10 @@ public void ugProgramSection() {
         }
 
         // Validate course count
-        Assert.assertEquals(actualCount, expectedCount, "❌ Course count mismatch. Expected: " + expectedCount + ", Found: " + actualCount);
+        softAssert.assertEquals(actualCount, expectedCount, "❌ Course count mismatch. Expected: " + expectedCount + ", Found: " + actualCount);
         test.log(Status.PASS, "✅ PG Program course count matched expected value: " + actualCount);
     } catch (Exception e) {
         test.log(Status.FAIL, "PG Program section failed: " + e.getMessage());
-        e.printStackTrace();
         softAssert.fail("Interaction failed for PG Program course list.");
     }
 
@@ -1102,7 +1101,7 @@ public void meet_our_top_ranked_faculty_Section() {
         // test.log(Status.INFO, "🔍 Checking first 3 faculty");
         // Faculty 1
         try {
-            WebElement one_container = driver.findElement(By.xpath("//h3[normalize-space()='Neha Tandon']more"));
+            WebElement one_container = driver.findElement(By.xpath("//h3[normalize-space()='Neha Tandon']"));
             Assert.assertTrue(one_container.isDisplayed(), "Neha Tandon not displayed");
             test.log(Status.PASS, "✅ Neha Tandon displayed");
         } catch (Exception e) {
@@ -1152,7 +1151,7 @@ public void meet_our_top_ranked_faculty_Section() {
         }
         // Faculty 5
         try {
-            WebElement five_container = driver.findElement(By.xpath("//h3[normalize-space()='Dr. Hayley Stainton']more"));
+            WebElement five_container = driver.findElement(By.xpath("//h3[normalize-space()='Dr. Hayley Stainton']"));
             Assert.assertTrue(five_container.isDisplayed(), "Dr. Hayley Stainton not displayed");
             test.log(Status.PASS, "✅ Dr. Hayley Stainton displayed");
         } catch (Exception e) {

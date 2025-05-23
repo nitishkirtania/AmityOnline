@@ -48,7 +48,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>22-05-2025 16:31</span>
+			<span class='label blue darken-3 suite-start-time'>22-05-2025 17:44</span>
 			</a>
 		</ul>
 	</div>
@@ -63,7 +63,7 @@
 				<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-										<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -107,12 +107,12 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='$0%'>
-                    <span class='strong'>0</span> tests passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='$100%'>
+                    <span class='strong'>1</span> tests passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='100%'>
-                    1</span> tests failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> tests failed, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> skipped
                 </div>
@@ -133,17 +133,17 @@
 	<div class='subview-left left'>
 		<div class='view-summary'>
 			<ul id='test-collection' class='test-collection'>
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Meet our top-ranked faculty</span>
-						<span class='test-time'>22-05-2025 16:31</span>
-						<span class='test-status right fail'>Fail</span>
+						<span class='test-time'>22-05-2025 17:44</span>
+						<span class='test-status right pass'>Pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>22-05-2025 16:31</span>
-	<span class='label end-time'>22-05-2025 16:31</span>
-	<span class='label time-taken grey lighten-1 white-text'>00 00 11.071</span>
+	<span class='label start-time'>22-05-2025 17:44</span>
+	<span class='label end-time'>22-05-2025 17:44</span>
+	<span class='label time-taken grey lighten-1 white-text'>00 00 12.279</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -155,105 +155,53 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='info'>			
-				<td class='status info' title='Info' alt='Info'><i class='material-icons'> info_outline </i></td>
-				<td class='timestamp'>4:31:32 pm</td>
+			<tr class='log' status='pass'>			
+				<td class='status pass' title='Pass' alt='Pass'><i class='material-icons'> check_circle </i></td>
+				<td class='timestamp'>5:44:39 pm</td>
 				<td class='step-details'>
-						🔍 Checking first 3 faculty
-				</td>
-			</tr>
-			<tr class='log' status='fail'>			
-				<td class='status fail' title='Fail' alt='Fail'><i class='material-icons'> cancel </i></td>
-				<td class='timestamp'>4:31:32 pm</td>
-				<td class='step-details'>
-						❌ Neha Tandon not found/displayed: invalid selector: Unable to locate an element with the xpath expression //h3[normalize-space()='Neha Tandon']more because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//h3[normalize-space()='Neha Tandon']more' is not a valid XPath expression.
-  (Session info: chrome=136.0.7103.114)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.5', java.version: '17.0.15'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9528030785da65dccf253e7da433b14b, findElement {using=xpath, value=//h3[normalize-space()='Neha Tandon']more}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.114, chrome: {chromedriverVersion: 136.0.7103.113 (76fa3c17824..., userDataDir: /var/folders/g1/m4g67yjs5gx...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62543}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:62543/devtoo..., se:cdpVersion: 136.0.7103.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9528030785da65dccf253e7da433b14b
+						✅ Neha Tandon displayed
 				</td>
 			</tr>
 			<tr class='log' status='pass'>			
 				<td class='status pass' title='Pass' alt='Pass'><i class='material-icons'> check_circle </i></td>
-				<td class='timestamp'>4:31:32 pm</td>
+				<td class='timestamp'>5:44:39 pm</td>
 				<td class='step-details'>
 						✅ Dr Sunil Kumar displayed
 				</td>
 			</tr>
 			<tr class='log' status='pass'>			
 				<td class='status pass' title='Pass' alt='Pass'><i class='material-icons'> check_circle </i></td>
-				<td class='timestamp'>4:31:32 pm</td>
+				<td class='timestamp'>5:44:39 pm</td>
 				<td class='step-details'>
 						✅ Sachit Paliwal displayed
 				</td>
 			</tr>
-			<tr class='log' status='info'>			
-				<td class='status info' title='Info' alt='Info'><i class='material-icons'> info_outline </i></td>
-				<td class='timestamp'>4:31:34 pm</td>
-				<td class='step-details'>
-						🔍 Checking next 3 faculty
-				</td>
-			</tr>
 			<tr class='log' status='pass'>			
 				<td class='status pass' title='Pass' alt='Pass'><i class='material-icons'> check_circle </i></td>
-				<td class='timestamp'>4:31:34 pm</td>
+				<td class='timestamp'>5:44:42 pm</td>
 				<td class='step-details'>
 						✅ Dr Ron Darnell displayed
 				</td>
 			</tr>
-			<tr class='log' status='fail'>			
-				<td class='status fail' title='Fail' alt='Fail'><i class='material-icons'> cancel </i></td>
-				<td class='timestamp'>4:31:34 pm</td>
+			<tr class='log' status='pass'>			
+				<td class='status pass' title='Pass' alt='Pass'><i class='material-icons'> check_circle </i></td>
+				<td class='timestamp'>5:44:42 pm</td>
 				<td class='step-details'>
-						❌ Dr. Hayley Stainton not found/displayed: invalid selector: Unable to locate an element with the xpath expression //h3[normalize-space()='Dr. Hayley Stainton']more because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//h3[normalize-space()='Dr. Hayley Stainton']more' is not a valid XPath expression.
-  (Session info: chrome=136.0.7103.114)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.5', java.version: '17.0.15'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9528030785da65dccf253e7da433b14b, findElement {using=xpath, value=//h3[normalize-space()='Dr. Hayley Stainton']more}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.114, chrome: {chromedriverVersion: 136.0.7103.113 (76fa3c17824..., userDataDir: /var/folders/g1/m4g67yjs5gx...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62543}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:62543/devtoo..., se:cdpVersion: 136.0.7103.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9528030785da65dccf253e7da433b14b
+						✅ Dr. Hayley Stainton displayed
 				</td>
 			</tr>
 			<tr class='log' status='pass'>			
 				<td class='status pass' title='Pass' alt='Pass'><i class='material-icons'> check_circle </i></td>
-				<td class='timestamp'>4:31:34 pm</td>
+				<td class='timestamp'>5:44:42 pm</td>
 				<td class='step-details'>
 						✅ Luke Pearce displayed
 				</td>
 			</tr>
-			<tr class='log' status='fail'>			
-				<td class='status fail' title='Fail' alt='Fail'><i class='material-icons'> cancel </i></td>
-				<td class='timestamp'>4:31:35 pm</td>
+			<tr class='log' status='pass'>			
+				<td class='status pass' title='Pass' alt='Pass'><i class='material-icons'> check_circle </i></td>
+				<td class='timestamp'>5:44:42 pm</td>
 				<td class='step-details'>
-						Test failed: java.lang.AssertionError: The following asserts failed:
-	Neha Tandon not foundinvalid selector: Unable to locate an element with the xpath expression //h3[normalize-space()='Neha Tandon']more because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//h3[normalize-space()='Neha Tandon']more' is not a valid XPath expression.
-  (Session info: chrome=136.0.7103.114)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.5', java.version: '17.0.15'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9528030785da65dccf253e7da433b14b, findElement {using=xpath, value=//h3[normalize-space()='Neha Tandon']more}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.114, chrome: {chromedriverVersion: 136.0.7103.113 (76fa3c17824..., userDataDir: /var/folders/g1/m4g67yjs5gx...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62543}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:62543/devtoo..., se:cdpVersion: 136.0.7103.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9528030785da65dccf253e7da433b14b,
-	Dr. Hayley Stainton not foundinvalid selector: Unable to locate an element with the xpath expression //h3[normalize-space()='Dr. Hayley Stainton']more because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//h3[normalize-space()='Dr. Hayley Stainton']more' is not a valid XPath expression.
-  (Session info: chrome=136.0.7103.114)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
-Build info: version: '4.19.1', revision: 'abe0ee07dc'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.5', java.version: '17.0.15'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9528030785da65dccf253e7da433b14b, findElement {using=xpath, value=//h3[normalize-space()='Dr. Hayley Stainton']more}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.114, chrome: {chromedriverVersion: 136.0.7103.113 (76fa3c17824..., userDataDir: /var/folders/g1/m4g67yjs5gx...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62543}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:62543/devtoo..., se:cdpVersion: 136.0.7103.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9528030785da65dccf253e7da433b14b
+						Test passed
 				</td>
 			</tr>
 		</tbody>
@@ -307,19 +255,19 @@ Session ID: 9528030785da65dccf253e7da433b14b
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>22-05-2025 16:31</div>
+					<div class='panel-lead'>22-05-2025 17:44</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>22-05-2025 16:31</div>
+			 		<div class='panel-lead'>22-05-2025 17:44</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>00 00 13.740</div>
+					<div class='panel-lead'>00 00 16.089</div>
 				</div>
 			</div>
 		</div>
@@ -331,8 +279,8 @@ Session ID: 9528030785da65dccf253e7da433b14b
 		<script>
 			var statusGroup = {
                 parentCount: 1,
-				passParent: 0,
-				failParent: 1,
+				passParent: 1,
+				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
@@ -358,7 +306,7 @@ Session ID: 9528030785da65dccf253e7da433b14b
 		
 		<script>
 			var timeline = {
-			        "Meet our top-ranked faculty":11.071
+			        "Meet our top-ranked faculty":12.279
 			};
 		</script>
 		
